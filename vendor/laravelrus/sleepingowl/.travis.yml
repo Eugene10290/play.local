@@ -1,0 +1,30 @@
+dist: precise
+
+language: php
+
+php:
+  - 7.0
+  - 7.1
+  - 7.2
+  - nightly
+
+allow_failures:
+  - php: nightly
+
+before_install:
+  - travis_wait
+
+before_script:
+  - travis_wait travis_retry composer self-update
+
+script:
+  - vendor/bin/phpunit
+
+install:
+  - travis_retry composer install --no-interaction --prefer-dist
+
+# cache vendors
+cache:
+  directories:
+    - vendor
+    - $HOME/.composer/cache  
