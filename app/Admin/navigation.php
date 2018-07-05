@@ -21,15 +21,58 @@ use SleepingOwl\Admin\Navigation\Page;
 //
 // AdminSection::addMenuPage(\App\User::class)
 
+
 return [
+    //Главная страница
     [
-        'title' => 'Dashboard',
+        'title' => 'Главная',
         'icon'  => 'fa fa-dashboard',
         'url'   => route('admin.dashboard'),
     ],
-
+    //Пользователи
     [
-        'title' => 'Information',
+        'title' => 'Пользователи',
+        'icon' => 'fa fa-users',
+        'pages' => [
+            [
+                'title' => 'Администрация',
+                'url' => route('admin.admins'),
+                'icon' => 'fa fa-lock',
+            ],
+
+            [
+                'title' => 'Пользователи',
+                'url' => route('admin.users'),
+                'icon' => 'fa fa-user',
+            ],
+        ],
+
+    ],
+    //Блог
+    [
+        'title' => 'Блог',
+        'icon' => 'fa fa-rss',
+        'pages' => [
+            [
+                'title' => 'Создать запись',
+                'url' => route('admin.news.create'),
+            ],
+
+            [
+                'title' => 'Управление',
+                'url' => route('admin.news.info'),
+            ],
+        ]
+    ],
+    //Заказы нот
+    [
+        'title' => 'Заказы',
+        'icon' => 'fa fa-shopping-cart',
+        'url' => route('admin.shop-hist'),
+    ],
+    //Информация
+    [
+        'title' => 'Информация',
         'icon'  => 'fa fa-exclamation-circle',
         'url'   => route('admin.information'),
     ],
