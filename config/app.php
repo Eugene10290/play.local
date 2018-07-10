@@ -151,6 +151,10 @@ return [
          * SleepingOwl Service Provider
          */
          SleepingOwl\Admin\Providers\SleepingOwlServiceProvider::class,
+        /**
+         * LaravelCollective Service Provider
+         */
+         Collective\Html\HtmlServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -179,7 +183,6 @@ return [
     */
 
     'aliases' => [
-
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
@@ -214,7 +217,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
-
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];

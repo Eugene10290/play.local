@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39a1d7a40688681d9944e6d656ad019a",
+    "content-hash": "182179f001e139ac1342a36739687b4f",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -894,6 +894,141 @@
             "time": "2018-02-07T20:20:57+00:00"
         },
         {
+            "name": "guzzlehttp/psr7",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
+                }
+            ],
+            "description": "PSR-7 message implementation that also provides common utility methods",
+            "keywords": [
+                "http",
+                "message",
+                "request",
+                "response",
+                "stream",
+                "uri",
+                "url"
+            ],
+            "time": "2017-03-20T17:10:46+00:00"
+        },
+        {
+            "name": "intervention/image",
+            "version": "2.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "e82d274f786e3d4b866a59b173f42e716f0783eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/e82d274f786e3d4b866a59b173f42e716f0783eb",
+                "reference": "e82d274f786e3d4b866a59b173f42e716f0783eb",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "guzzlehttp/psr7": "~1.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.2",
+                "phpunit/phpunit": "^4.8 || ^5.7"
+            },
+            "suggest": {
+                "ext-gd": "to use GD library based image processing.",
+                "ext-imagick": "to use Imagick based image processing.",
+                "intervention/imagecache": "Caching extension for the Intervention Image library"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Intervention\\Image\\ImageServiceProvider"
+                    ],
+                    "aliases": {
+                        "Image": "Intervention\\Image\\Facades\\Image"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\": "src/Intervention/Image"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@olivervogel.com",
+                    "homepage": "http://olivervogel.com/"
+                }
+            ],
+            "description": "Image handling and manipulation library with support for Laravel integration",
+            "homepage": "http://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "laravel",
+                "thumbnail",
+                "watermark"
+            ],
+            "time": "2018-05-29T14:19:03+00:00"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -1317,16 +1452,16 @@
         },
         {
             "name": "laravelcollective/html",
-            "version": "v5.5.2",
+            "version": "v5.6.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "818efc2e160aa56e8475219faed24542e80ee25d"
+                "reference": "974605fcd22a7e4d19f0b2ef635a0d1d7400387d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/818efc2e160aa56e8475219faed24542e80ee25d",
-                "reference": "818efc2e160aa56e8475219faed24542e80ee25d",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/974605fcd22a7e4d19f0b2ef635a0d1d7400387d",
+                "reference": "974605fcd22a7e4d19f0b2ef635a0d1d7400387d",
                 "shasum": ""
             },
             "require": {
@@ -1340,7 +1475,7 @@
             "require-dev": {
                 "illuminate/database": "5.6.*",
                 "mockery/mockery": "~1.0",
-                "phpunit/phpunit": "~5.4"
+                "phpunit/phpunit": "~7.1"
             },
             "type": "library",
             "extra": {
@@ -1381,48 +1516,43 @@
             ],
             "description": "HTML and Form Builders for the Laravel Framework",
             "homepage": "https://laravelcollective.com",
-            "time": "2018-02-08T18:38:44+00:00"
+            "time": "2018-06-18T15:04:16+00:00"
         },
         {
             "name": "laravelrus/sleepingowl",
-            "version": "4.111.002",
+            "version": "4.99.99",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelRUS/SleepingOwlAdmin.git",
-                "reference": "5db8f63a3d365ed3949ca098de163ac3ea555383"
+                "reference": "fd45eb47fe48cf15ab65bdb5aaace77c66e28786"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelRUS/SleepingOwlAdmin/zipball/5db8f63a3d365ed3949ca098de163ac3ea555383",
-                "reference": "5db8f63a3d365ed3949ca098de163ac3ea555383",
+                "url": "https://api.github.com/repos/LaravelRUS/SleepingOwlAdmin/zipball/fd45eb47fe48cf15ab65bdb5aaace77c66e28786",
+                "reference": "fd45eb47fe48cf15ab65bdb5aaace77c66e28786",
                 "shasum": ""
             },
             "require": {
-                "barryvdh/laravel-ide-helper": "^2.4.3",
+                "barryvdh/laravel-ide-helper": "^2.4",
                 "davejamesmiller/laravel-breadcrumbs": "^3.0",
                 "doctrine/dbal": "~2.3",
                 "erusev/parsedown": "1.*",
                 "kodicms/laravel-assets": "0.*",
                 "kodicomponents/navigation": "0.*",
                 "kodicomponents/support": "0.*",
-                "laravel/framework": "~5.5",
-                "laravelcollective/html": "5.5.*",
-                "php": ">=7.0"
+                "laravel/framework": "~5.2",
+                "laravelcollective/html": "5.*",
+                "php": ">=5.6.4"
             },
             "require-dev": {
                 "mockery/mockery": "0.9.*",
-                "orchestra/testbench": "^3.5 || ^3.6",
-                "phpunit/phpunit": "^6.0 || ^7.0"
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "~5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-development": "4.x-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "SleepingOwl\\Admin\\Providers\\SleepingOwlServiceProvider"
-                    ]
                 }
             },
             "autoload": {
@@ -1443,14 +1573,10 @@
                 {
                     "name": "Pavel Buchnev",
                     "email": "butschster@gmail.com"
-                },
-                {
-                    "name": "Dave Gabrielyan",
-                    "email": "aioslike@gmail.com"
                 }
             ],
             "description": "Administrative interface builder for Laravel.",
-            "homepage": "http://sleepingowl.ru",
+            "homepage": "http://sleeping-owl.github.io",
             "keywords": [
                 "admin",
                 "administrator",
@@ -1458,7 +1584,7 @@
                 "laravel",
                 "panel"
             ],
-            "time": "2018-05-21T05:07:06+00:00"
+            "time": "2017-08-10T15:37:33+00:00"
         },
         {
             "name": "league/flysystem",
@@ -1728,16 +1854,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.16",
+            "version": "v2.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "7fd9ad98e675e88bb5c1c0aa350762433f608a92"
+                "reference": "29af24f25bab834fcbb38ad2a69fa93b867e070d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/7fd9ad98e675e88bb5c1c0aa350762433f608a92",
-                "reference": "7fd9ad98e675e88bb5c1c0aa350762433f608a92",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/29af24f25bab834fcbb38ad2a69fa93b867e070d",
+                "reference": "29af24f25bab834fcbb38ad2a69fa93b867e070d",
                 "shasum": ""
             },
             "require": {
@@ -1773,7 +1899,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2018-07-04T16:14:12+00:00"
+            "time": "2018-07-04T16:31:37+00:00"
         },
         {
             "name": "psr/container",
@@ -1823,6 +1949,56 @@
                 "psr"
             ],
             "time": "2017-02-14T16:28:37+00:00"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/log",
