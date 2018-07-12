@@ -41,6 +41,14 @@ class News extends Model
         $query->where('published_at', '<=', Carbon::now());
     }
     /**
+     * Даёт аттрибут времени для статьи
+     *
+     * @param $date
+     */
+    public function setPublishedAtAttribute($date) {
+        $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d', $date);
+    }
+    /**
      * Красивое отображение даты и времени
      *
      * @return mixed

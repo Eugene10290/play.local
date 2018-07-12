@@ -13,7 +13,7 @@
         <a href="{{ url('/news', $n->slug) }}"><img class="news-image"  src="{{ asset('images/uploads/newsImages/'.$n->news_wall) }}" alt="{{ $n->title }}"></a>
         <div class="news-description">
             <h3><a href="{{ url('/news', $n->slug) }}">{{ $n->title }}</a></h3>
-            <time datetime="{{$n->published_at}}"><span class="fa fa-clock-o fa-1x"></span>{{$n->getBeautifulDateAttribute()}}</time>
+            <time datetime="{{$n->created_at}}"><span class="fa fa-clock-o fa-1x"></span>{{$n->getBeautifulDateAttribute()}}</time>
         </div>
     @endforeach
 </body>

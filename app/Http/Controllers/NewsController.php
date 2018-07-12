@@ -44,6 +44,7 @@ class NewsController extends Controller
             ];
             $this->validate($request, $rules);
             $input = $this->imageArticleRequest($request);
+
             Auth::user()->news()->create($input);
             return redirect('news');
         }

@@ -11,7 +11,7 @@
     <div class="news-body">
         <p>{{ $news->title }}</p>
         <p><img src="{{ asset('images/uploads/newsImages/'.$news->news_wall) }}"></p>
-        <p>{{ $news->created_at }}</p>
+        <p>{{ $news->getBeautifulDateAttribute() }}</p>
         <p> {{ $news->body }}</p>
         <p></p>
     </div>
