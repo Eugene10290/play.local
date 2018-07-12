@@ -11,12 +11,20 @@ class NewsController extends Controller
 {
 
     /**
-     * Отображение новотей
+     * Отображение новоcтей
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index() {
-        return view('news.index');
+        $news = News::latest()
+            ->published()
+            ->paginate(10);
+
+        return view('news.index', compact('news'));
+    }
+
+    public function show(News $news) {
+        return view('news.show', compact('news'));
     }
 
     /**
@@ -30,19 +38,16 @@ class NewsController extends Controller
 
     public function store(Request $request) {
         if($request->isMethod('post')){
-            /*$rules = [
+            $rules = [
                 'title' => 'required|min:5|max:50',
                 'body' => 'required|min:20'
             ];
-            $this->validate($request, $rules);*/
+            $this->validate($request, $rules);
             $input = $this->imageArticleRequest($request);
-
-
             Auth::user()->news()->create($input);
             return redirect('news');
         }
     }
-
     /**
      * Функция обрезки и загрузки изображения для статьи, генерации слага
      *
@@ -53,7 +58,7 @@ class NewsController extends Controller
         if ($request->hasFile('news_wall')) {
             $image = $request->file('news_wall');
             $imageName = time() . "." . $image->getClientOriginalExtension();
-            $savePath = public_path('/uploads/newsImages/' . $imageName);
+            $savePath = public_path('images/uploads/newsImages/' . $imageName);
             Image::make($image)
                 ->save($savePath);
             $input = $request->all();

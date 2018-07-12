@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class News extends Model
 {
@@ -13,6 +14,15 @@ class News extends Model
         'news_wall',
         'slug'
     ];
+    protected $dates = ['published_at'];
+    /**
+     * Переопределение метода для генерации slug url
+     *
+     * @return string
+     */
+    public function getRouteKeyName() {
+        return 'slug';
+    }
 
     /**
      * Статья пренадлежит пользователю
@@ -22,4 +32,25 @@ class News extends Model
     public function user() {
         return $this->belongsTo('App/User');
     }
+    /**
+     * Выборка опубликованных статей
+     *
+     * @param $query
+     */
+    public function scopePublished($query) {
+        $query->where('published_at', '<=', Carbon::now());
+    }
+    /**
+     * Красивое отображение даты и времени
+     *
+     * @return mixed
+     */
+    public function  getBeautifulDateAttribute() {
+        Carbon::setLocale(config('app.locale'));
+        if($this->published_at > Carbon::now()->subMonth()) {
+            return $this->published_at->diffForHumans();
+        }
+        return $this->published_at->toDateTimeString('Y-m-d');
+    }
+
 }
