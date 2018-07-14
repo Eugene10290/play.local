@@ -14,7 +14,16 @@
         <div class="news-description">
             <h3><a href="{{ url('/news', $n->slug) }}">{{ $n->title }}</a></h3>
             <time datetime="{{$n->published_at}}"><span class="fa fa-clock-o fa-1x"></span>{{$n->getBeautifulDateAttribute()}}</time>
-            <a class="admin btn btn-primary btn-xs" href="{{url('news/'.$news->id.'/edit')}}">Редактировать</a>
+            <a class="admin btn btn-primary btn-xs" href="{{url('news/'.$n->id.'/edit')}}">Редактировать</a>
+            {!! Form::open(['url' => 'news/'.$n->id, 'action' => 'NewsController@destroy', 'method' => 'DELETE', 'class' => 'admin button'])!!}
+            {!! Form::token() !!}
+            {!! Form::submit('Удалить',
+                 [
+                    'class' => 'btn btn-danger btn-xs confirm',
+                    'onclick' => 'return confirm("Удалить статью?")'
+                 ])
+             !!}
+            {!! Form::close() !!}
         </div>
     @endforeach
 </body>

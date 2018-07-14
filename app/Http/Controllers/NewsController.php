@@ -6,13 +6,20 @@ use App\News;
 use Illuminate\Http\Request;
 use App\Http\Requests\NewsRequest;
 use Illuminate\Contracts\Filesystem\Factory;
+
 use Auth;
 use Image;
 
 class NewsController extends Controller
 {
+
+    public function __construct(Factory $factory)
+    {
+        $this->factory = $factory;
+    }
+
     /**
-     * Отображение новоcтей
+     * Отображение статей
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -25,7 +32,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Отображение отдельной новости
+     * Отображение отдельной статьи
      *
      * @param News $news
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -34,7 +41,7 @@ class NewsController extends Controller
         return view('news.show', compact('news'));
     }
     /**
-     * Отображение формы создания новостей
+     * Отображение формы создания статей
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -43,7 +50,7 @@ class NewsController extends Controller
     }
 
     /**
-     *
+     * Создает статью
      *
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
@@ -66,6 +73,13 @@ class NewsController extends Controller
         return view('news.edit', compact('news'));
     }
 
+    /**
+     * Обновляет статью и удаляет старое изображение с сервера
+     *
+     * @param $id
+     * @param NewsRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function update($id, NewsRequest $request) {
         $news = News::findOrFail($id);
         $input = $this->imageArticleRequest($request);
@@ -79,6 +93,21 @@ class NewsController extends Controller
         }
 
         return redirect('news/'.$news->slug);
+    }
+
+    /**
+     * Удаление записи
+     * @param $id - id записи
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function destroy($id) {
+        $news = News::findOrFail($id);
+        $oldImage = $news->news_wall;
+        $disk = $this->factory->disk('images');
+        $disk->delete('/newsImages/' . $oldImage);
+        $news->delete();
+
+        return redirect('news');
     }
     /**
      * Функция обрезки и загрузки изображения для статьи, генерации слага
