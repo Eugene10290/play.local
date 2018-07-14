@@ -14,6 +14,7 @@
         <div class="news-description">
             <h3><a href="{{ url('/news', $n->slug) }}">{{ $n->title }}</a></h3>
             <time datetime="{{$n->published_at}}"><span class="fa fa-clock-o fa-1x"></span>{{$n->getBeautifulDateAttribute()}}</time>
+            <a class="admin btn btn-primary btn-xs" href="{{url('news/'.$news->id.'/edit')}}">Редактировать</a>
         </div>
     @endforeach
 </body>
