@@ -9,7 +9,6 @@ use Image;
 
 class NewsController extends Controller
 {
-
     /**
      * Отображение новоcтей
      *
@@ -23,10 +22,15 @@ class NewsController extends Controller
         return view('news.index', compact('news'));
     }
 
+    /**
+     * Отображение отдельной новости
+     *
+     * @param News $news
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show(News $news) {
         return view('news.show', compact('news'));
     }
-
     /**
      * Отображение формы создания новостей
      *
@@ -36,6 +40,12 @@ class NewsController extends Controller
         return view('news.create');
     }
 
+    /**
+     *
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store(Request $request) {
         if($request->isMethod('post')){
             $rules = [
@@ -44,8 +54,8 @@ class NewsController extends Controller
             ];
             $this->validate($request, $rules);
             $input = $this->imageArticleRequest($request);
-
             Auth::user()->news()->create($input);
+
             return redirect('news');
         }
     }
