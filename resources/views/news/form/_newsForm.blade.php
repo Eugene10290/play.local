@@ -8,7 +8,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('published_at',"Дата публикации :") !!}
-    {!! Form::input('date', 'published_at', date('Y-m-d'), ['class' => 'form-control']) !!}
+    {!! Form::input('datetime-local', 'published_at', date('Y-m-d H:i'), ['class' => 'form-control', 'min' => date('Y-m-d') ]) !!}
 </div>
 <div class="form-group">
     {!! Form::label('news_wall', 'Главное изображение') !!}

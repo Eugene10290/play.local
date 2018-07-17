@@ -15,6 +15,7 @@ class News extends Model
         'slug'
     ];
     protected $dates = ['published_at'];
+
     /**
      * Переопределение метода для генерации slug url
      *
@@ -40,13 +41,22 @@ class News extends Model
     public function scopePublished($query) {
         $query->where('published_at', '<=', Carbon::now());
     }
+
+    /**
+     * Выборка статей в очередь на публикацию
+     *
+     * @param $query
+     */
+    public function scopeUnPublished($query){
+        $query->where('published_at', '>', Carbon::now());
+    }
     /**
      * Даёт аттрибут времени для статьи
      *
      * @param $date
      */
     public function setPublishedAtAttribute($date) {
-        $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d', $date);
+        $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d\TH:i', $date)->format('Y-m-d H:i');
     }
     /**
      * Красивое отображение даты и времени
