@@ -9,16 +9,22 @@
 <body>
 	<div class="container">	
 		<div class="row">
-       		<header>
-        		<ul>
-        			<li><a href="#">Главная</a></li>
-    	    		<li><a href="#">Играй с душой</a></li>
-	        		<li><a href="#">Блог</a></li>
-        			<li><a href="#">(Скоро будет лого)</a></li>
-        			<li><a href="#">Ноты</a></li>
-        			<li><a href="#">Поддержка проекта</a></li>
-    	    		<li><a href="#">О нас</a></li>
-	        	</ul>
+       		<header style="background-image: url(img/header_fon.jpg);">
+       			<div class="head-div">
+       				<ul>
+	        			<li><a href="#">Главная</a></li>
+	    	    		<li><a href="#">Играй с душой</a></li>
+		        		<li><a href="#">Блог</a></li>
+		        		<h2>Vitaliy Stulnev</h2>
+	        			<li><a href="#">Ноты</a></li>
+	        			<li><a href="#">Поддержка проекта</a></li>
+	    	    		<li><a href="#">О нас</a></li>
+	        		</ul>
+       			</div>
+       			<div class="view-site">
+       				<h3>Крутой заголовок</h3>
+       				<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Прямо бросил диких вопрос они, рукописи своего. Текст большого коварных возвращайся себя безопасную буквенных, имеет рыбными назад ты лучше реторический.</p>
+       			</div>
         	</header>
     	</div>
 	</div>
