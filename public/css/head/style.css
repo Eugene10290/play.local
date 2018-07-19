@@ -1,35 +1,71 @@
-header > ul{
+header .head-div > ul{
 	margin: 0 auto;
 	text-align: center;
 	padding: 0;
 }
 
-header > ul > li:nth-child(1){
+header .head-div > ul > li:nth-child(1){
 	margin-left: 0;
 }
 
-header > ul > li > a{
+header .head-div > ul > li > a{
 	text-decoration: none;	
 	color: #ff8327 !important;
 }
 
-header > ul > li{
-	margin-top: 30px;
-	margin-bottom: 30px;
-	display: inline-block;
-	margin-left: 50px;
-	color: #ff8327;
-	font-size: 16px;
+header .head-div > ul > li{
+	margin-top: 45px;
+    margin-bottom: 30px;
+    display: inline-block;
+    margin-left: 40px;
+    color: #ff8327;
+    font-size: 16px;
+    border: 1px solid white;
+    padding: 5px 15px;
+    border-radius: 12px;
+}
+
+header .head-div > ul > li:hover{
+	background-color: #738190;
+	transition: 0.7s;
 }
 
 header{
-	background-color: #295691;
 	width: 100%;
+	min-height: 672px;
+	background-size: cover;
+	background-position: center;
+	display: inline-block !important;
+}
+
+.head-div{
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #394b5f;
+	opacity: .75;
 }
 
 .row{
 	margin-left: 0 !important;
 	margin-right: 0 !important;
+}
+
+.view-site{
+	background-color: rgba(36,51,67,.8);
+	padding: 35px 30px 30px;
+	color: #97a4b2;
+    width: 350px;
+    height: 380px;
+    margin-left: 800px;
+    margin-top: 230px;
+    position: relative;
+    font-size: 16px;
+    border: 1px solid rgba(36,51,67,.8);
+    border-radius: 10px;
 }
 
 .container{
@@ -42,7 +78,7 @@ footer{
 	text-align: center;
 }
 
-img{
+footer img{
 	width: 40px;
 	height: 40px;
 	margin-top: 30px;
@@ -52,4 +88,17 @@ img{
 footer > a{
 	width: 40px;
 	height: 40px;
+}
+
+h2{
+	display: inline-block;
+    margin-left: 40px;
+	color: #fff !important;
+	font-style: italic;
+}
+
+h3{
+	color: #fff !important;
+    margin-bottom: 25px !important;
+    font-size: 30px !important;
 }
