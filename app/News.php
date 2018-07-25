@@ -16,6 +16,9 @@ class News extends Model
     ];
     protected $dates = ['published_at'];
 
+    //protected $dateFormat = 'Y-m-d\TH:i:s';
+
+
     /**
      * Переопределение метода для генерации slug url
      *
@@ -24,7 +27,6 @@ class News extends Model
     public function getRouteKeyName() {
         return 'slug';
     }
-
     /**
      * Статья пренадлежит пользователю
      *
@@ -56,7 +58,13 @@ class News extends Model
      * @param $date
      */
     public function setPublishedAtAttribute($date) {
-        $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d\TH:i', $date)->format('Y-m-d H:i');
+        if($date === null) {
+            $currentDate =  date('Y-m-d\TH:i:s');
+            $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d\TH:i:s', $currentDate);
+        }else {
+            $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d\TH:i:s', $date)->format('Y-m-d\TH:i:s');
+        }
+
     }
     /**
      * Красивое отображение даты и времени

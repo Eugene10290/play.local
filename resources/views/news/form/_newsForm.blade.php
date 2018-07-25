@@ -6,10 +6,18 @@
     {!! Form::label('body', 'Контент') !!}
     {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
 </div>
-<div class="form-group">
-    {!! Form::label('published_at',"Дата публикации :") !!}
-    {!! Form::input('datetime-local', 'published_at', date('Y-m-d H:i'), ['class' => 'form-control', 'min' => date('Y-m-d') ]) !!}
-</div>
+<?php echo date('Y-m-d\TH:i:s')?>
+@if($publishedDate === 1)
+    <div class="form-group">
+        {!! Form::label('published_at',"Дата публикации :") !!}
+        {!! Form::input('datetime-local', 'published_at', '{{ \Carbon\Carbon::now()  }}', [
+            'class' => 'form-control',
+             'min' => date('Y-m-d')
+         ]) !!}
+    </div>
+@elseif($publishedDate === 0)
+        {{ Form::hidden('updated_at', date('Y-m-d\TH:i:s')) }}
+@endif
 <div class="form-group">
     {!! Form::label('news_wall', 'Главное изображение') !!}
     {!! Form::file('news_wall') !!}

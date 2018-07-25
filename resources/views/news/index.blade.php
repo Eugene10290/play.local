@@ -9,7 +9,9 @@
 </head>
 <body>
     <h1>Новости</h1>
+
     @foreach($news as $n)
+
         <a href="{{ url('/news', $n->slug) }}"><img class="news-image"  src="{{ asset('images/uploads/newsImages/'.$n->news_wall) }}" alt="{{ $n->title }}"></a>
         <div class="news-description">
             <h3><a href="{{ url('/news', $n->slug) }}">{{ $n->title }}</a></h3>

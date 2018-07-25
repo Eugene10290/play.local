@@ -82,7 +82,7 @@ class NewsController extends Controller
      */
     public function update($id, NewsRequest $request) {
         $news = News::findOrFail($id);
-        $input = $this->imageArticleRequest($request);
+        $input = $this->imageArticleRequest($request);;
         if($input !== null) {
             $old_image = $news->news_wall;
             $disk = $this->factory->disk('images');
