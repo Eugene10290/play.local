@@ -33,36 +33,30 @@ return [
     [
         'title' => 'Пользователи',
         'icon' => 'fa fa-users',
-        'pages' => [
-            [
-                'title' => 'Администрация',
-                'url' => route('admin.admins'),
-                'icon' => 'fa fa-lock',
-            ],
-
-            [
-                'title' => 'Пользователи',
-                'url' => route('admin.users'),
-                'icon' => 'fa fa-user',
-            ],
-        ],
-
+    ],
+    [
+        'title' => 'Администрация',
+        'url' => route('admin.admins'),
+        'icon' => 'fa fa-lock',
+    ],
+    [
+        'title' => 'Пользователи',
+        'url' => route('admin.users'),
+        'icon' => 'fa fa-user',
     ],
     //Блог
     [
         'title' => 'Блог',
         'icon' => 'fa fa-rss',
-        'pages' => [
-            [
-                'title' => 'Создать запись',
-                'url' => route('admin.news.create'),
-            ],
 
-            [
-                'title' => 'Управление',
-                'url' => route('admin.news.info'),
-            ],
-        ]
+    ],
+    [
+        'title' => 'Создать запись',
+        'url' => route('admin.news.create'),
+    ],
+    [
+        'title' => 'Управление',
+        'url' => route('admin.news.info'),
     ],
     //Заказы нот
     [
