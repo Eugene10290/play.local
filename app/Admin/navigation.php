@@ -23,8 +23,10 @@ use SleepingOwl\Admin\Navigation\Page;
 
 
 return [
+
     //Главная страница
     [
+        'title' => 'Dashboard',
         'title' => 'Главная',
         'icon'  => 'fa fa-dashboard',
         'url'   => route('admin.dashboard'),
@@ -33,30 +35,33 @@ return [
     [
         'title' => 'Пользователи',
         'icon' => 'fa fa-users',
-    ],
-    [
-        'title' => 'Администрация',
-        'url' => route('admin.admins'),
-        'icon' => 'fa fa-lock',
-    ],
-    [
-        'title' => 'Пользователи',
-        'url' => route('admin.users'),
-        'icon' => 'fa fa-user',
+        'pages' => [
+            [
+                'title' => 'Администрация',
+                'url' => route('admin.admins'),
+                'icon' => 'fa fa-lock',
+            ],
+            [
+                'title' => 'Пользователи',
+                'url' => route('admin.users'),
+                'icon' => 'fa fa-user',
+            ],
+        ],
     ],
     //Блог
     [
         'title' => 'Блог',
         'icon' => 'fa fa-rss',
-
-    ],
-    [
-        'title' => 'Создать запись',
-        'url' => route('admin.news.create'),
-    ],
-    [
-        'title' => 'Управление',
-        'url' => route('admin.news.info'),
+        'pages' => [
+            [
+                'title' => 'Создать запись',
+                'url' => route('admin.news.create'),
+            ],
+            [
+                'title' => 'Управление',
+                'url' => route('admin.news.info'),
+            ],
+        ]
     ],
     //Заказы нот
     [
@@ -66,10 +71,12 @@ return [
     ],
     //Информация
     [
+        'title' => 'Information',
         'title' => 'Информация',
         'icon'  => 'fa fa-exclamation-circle',
         'url'   => route('admin.information'),
     ],
+
 
     // Examples
     // [
