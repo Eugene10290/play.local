@@ -11,17 +11,20 @@
 		<div class="row">
        		<header style="background-image: url(img/header_fon.jpg);">
        			<div class="head-div">
+       				<a href="#"><h2>Vitaliy Stulnev</h2></a>
        				<ul>
-	        			<li><a href="#">Главная</a></li>
-	    	    		<li><a href="#">Играй с душой</a></li>
-		        		<li><a href="#">Блог</a></li>
-		        		<h2>Vitaliy Stulnev</h2>
-	        			<li><a href="#">Ноты</a></li>
-	        			<li><a href="#">Поддержка проекта</a></li>
-	    	    		<li><a href="#">О нас</a></li>
+	        			<li><a href="#" class="link">Главная</a></li>
+	    	    		<li><a href="#" class="link">Играй с душой</a></li>
+		        		<li><a href="#" class="link">Блог</a></li>
+	        			<li><a href="#" class="link">Ноты</a></li>
+	        			<li><a href="#" class="link">Поддержка проекта</a></li>
+	    	    		<li><a href="#" class="link">О нас</a></li>
 	        		</ul>
        			</div>
-       			<div class="view-site">
+       			<div class="left-view-site">
+       				<h1>Моя задача научить вас играть</h1>
+       			</div>
+       			<div class="right-view-site">
        				<h3>Крутой заголовок</h3>
        				<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Прямо бросил диких вопрос они, рукописи своего. Текст большого коварных возвращайся себя безопасную буквенных, имеет рыбными назад ты лучше реторический.</p>
        			</div>

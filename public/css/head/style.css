@@ -2,32 +2,22 @@ header .head-div > ul{
 	margin: 0 auto;
 	text-align: center;
 	padding: 0;
+	display: inline-block;
+    margin-left: 350px;
 }
 
 header .head-div > ul > li:nth-child(1){
 	margin-left: 0;
 }
 
-header .head-div > ul > li > a{
-	text-decoration: none;	
-	color: #ff8327 !important;
-}
-
 header .head-div > ul > li{
-	margin-top: 45px;
+	margin-top: 35px;
     margin-bottom: 30px;
     display: inline-block;
-    margin-left: 40px;
+    margin-left: 30px;
     color: #ff8327;
-    font-size: 16px;
-    border: 1px solid white;
-    padding: 5px 15px;
-    border-radius: 12px;
-}
-
-header .head-div > ul > li:hover{
-	background-color: #738190;
-	transition: 0.7s;
+    font-size: 17px;
+    display: inline-block;
 }
 
 header{
@@ -45,7 +35,7 @@ header{
 	position: absolute;
 	left: 0;
 	top: 0;
-	background-color: #394b5f;
+	background-color: #222a33;
 	opacity: .75;
 }
 
@@ -54,18 +44,20 @@ header{
 	margin-right: 0 !important;
 }
 
-.view-site{
+.right-view-site{
 	background-color: rgba(36,51,67,.8);
 	padding: 35px 30px 30px;
 	color: #97a4b2;
     width: 350px;
     height: 380px;
-    margin-left: 800px;
     margin-top: 230px;
     position: relative;
     font-size: 16px;
     border: 1px solid rgba(36,51,67,.8);
     border-radius: 10px;
+    float: right;
+    margin-right: 90px;
+    display: inline-block;
 }
 
 .container{
@@ -92,7 +84,7 @@ footer > a{
 
 h2{
 	display: inline-block;
-    margin-left: 40px;
+    margin-left: 80px;
 	color: #fff !important;
 	font-style: italic;
 }
@@ -101,4 +93,47 @@ h3{
 	color: #fff !important;
     margin-bottom: 25px !important;
     font-size: 30px !important;
+}
+
+.link{
+   text-decoration:none !important;
+   position:relative;
+   color: #fff !important;
+}
+
+.link:before{
+   position:absolute;
+   bottom: -3px;
+   content: " ";
+   border-bottom: 1px solid #ccc;
+   left:0%;
+   width:0%;
+   transition: all 0.3s;
+}
+
+.link:hover:before{
+   width:100%;
+   left:0%;
+}
+
+.link:hover{
+	color: #ff8327 !important;
+	width:100%;
+   	left:0%;
+}
+
+.left-view-site{
+	margin-top: 230px;
+	margin-left: 90px;
+	float: left;
+	display: inline-block;
+	position: relative;
+    color: aliceblue;
+    width: 600px;
+}
+
+.left-view-site > h1{
+	border-bottom: #ff8327 5px solid;
+	font-size: 40px;
+    padding-bottom: 5px;
 }
