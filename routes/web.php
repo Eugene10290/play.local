@@ -19,3 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/news', 'NewsController');
+Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function(){
+    Route::resource('roles','RoleController');
+    Route::resource('users','UserController');
+});

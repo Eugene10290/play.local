@@ -147,10 +147,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
-         /**
-         * SleepingOwl Service Provider
-         */
-         SleepingOwl\Admin\Providers\SleepingOwlServiceProvider::class,
         /**
          * LaravelCollective Service Provider
          */
