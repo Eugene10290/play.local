@@ -3,47 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>head</title>
-    <link href="{{ asset('public/css/head/style.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('public/css/home-page/style.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('public/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" >
+    <link href="{{ asset('public/css/head/style.css') }}" rel="stylesheet" type="text/css" >
 </head>
 <body>
-	<div class="container">	
-		<div class="row">
-       		<header>
-        		<ul>
-        			<li><a href="#">Главная</a></li>
-    	    		<li><a href="#">Играй с душой</a></li>
+	<header>
+		<div class="container">	
+			<div class="row">
+	  			<div class="logo">
+	  				<h1><a href="#">Vitaliy Stulnev</a></h1>
+	  			</div>
+	    		<ul>
+		    		<li><a href="#">Играй с душой</a>
+						<ul>
+							<li><a href="#">Аудио</a></li>
+							<li><a href="#">Видео</a></li>
+						</ul>
+		    		</li>
 	        		<li><a href="#">Блог</a></li>
-        			<li><a href="#">(Скоро будет лого)</a></li>
-        			<li><a href="#">Ноты</a></li>
-        			<li><a href="#">Поддержка проекта</a></li>
-    	    		<li><a href="#">О нас</a></li>
+	    			<li><a href="#">Ноты</a>
+	    				<ul>
+							<li><a href="#">Бесплатные</a></li>
+							<li><a href="#">Заказать</a></li>
+						</ul>
+					</li>
+	    			<li><a href="#">Поддержка проекта</a></li>
 	        	</ul>
-        	</header>
-    	</div>
-	</div>
-
-	<div class="container">	
-		<div class="row">
-			<div class="content">
-				
 			</div>
 		</div>
-	</div>
+	</header>
+	
+	@yield('content')
+		<div class="container">	
+			<div class="row">
 
+			</div>
+		</div>
 
-	<div class="container">
-		<div class="row">
-			<footer>
-				<a href="#"><img src="{{ asset('public/img/youtube.png') }}" alt=""></a>
+	<footer>
+		<div class="container">
+			<div class="row">
 				<a href="#"><img src="{{ asset('public/img/facebook.png') }}" alt=""></a>
+				<a href="#"><img src="{{ asset('public/img/youtube.png') }}" alt=""></a>
 				<a href="#"><img src="{{ asset('public/img/Instagram.png') }}" alt=""></a>
+				<a href="#"><img src="{{ asset('public/img/telegram.png') }}" alt=""></a>
+				<a href="#"><img src="{{ asset('public/img/whatsapp.png') }}" alt=""></a>
 				<a href="#"><img src="{{ asset('public/img/g+.png') }}" alt=""></a>
 				<p>&#169; 2018 Stulnev Vitaliy. All rights reserved.</p>
-			</footer>
-		</div>	
-	</div>
+			</div>	
+		</div>
+	</footer>
 
+	<script src="{{ asset('public/js/home-page/script.js') }}"></script>
     
 </body>
 </html>
