@@ -18,8 +18,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/news', 'NewsController');
+Route::resource('blog', 'UserBlogController', ['only' => [
+    'index', 'show'
+]]);
+
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function(){
-    Route::resource('roles','RoleController');
-    Route::resource('users','UserController');
+    Route::get('/dashboard', function (){
+        return view('dashboard');
+    });
+    Route::resource('/roles','RoleController');
+    Route::resource('/users','UserController');
+    Route::resource('/blog', 'BlogController')->parameters([
+        'blogs' => 'blog'
+    ]);
 });

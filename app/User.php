@@ -35,7 +35,7 @@ class User extends Authenticatable
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function news() {
-        return $this->hasMany('App\News');
+    public function blog() {
+        return $this->hasMany('App\Blog');
     }
 }

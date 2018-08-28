@@ -20,7 +20,7 @@
 @endif
 <div class="form-group">
     {!! Form::label('news_wall', 'Главное изображение') !!}
-    {!! Form::file('news_wall') !!}
+    {!! Form::file('wall') !!}
 </div>
 <div class="form-group">
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control']) !!}

@@ -63,11 +63,10 @@ return [
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
         ],
-        'images' => [
+        'uploads' => [
             'driver' => 'local',
-            'root' => public_path('uploads')
+            'root' => public_path('images\uploads')
         ]
-
     ],
 
 ];
