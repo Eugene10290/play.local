@@ -11,25 +11,29 @@
 	<header>
 		<div class="container">	
 			<div class="row">
-	  			<div class="logo">
-	  				<h1><a href="#">Vitaliy Stulnev</a></h1>
-	  			</div>
-	    		<ul>
-		    		<li><a href="#">Играй с душой</a>
-						<ul>
-							<li><a href="#">Аудио</a></li>
-							<li><a href="#">Видео</a></li>
-						</ul>
-		    		</li>
-	        		<li><a href="#">Блог</a></li>
-	    			<li><a href="#">Ноты</a>
-	    				<ul>
-							<li><a href="#">Бесплатные</a></li>
-							<li><a href="#">Заказать</a></li>
-						</ul>
-					</li>
-	    			<li><a href="#">Поддержка проекта</a></li>
-	        	</ul>
+				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+		  			<div class="logo">
+		  				<h1><a href="#">Vitaliy Stulnev</a></h1>
+		  			</div>
+		  		</div>
+		  		<div class="col-lg-8 col-md-8 hidden-sm hidden-xs" style="height: 100%">
+		    		<ul class="mnu">
+			    		<li><a href="#">Играй с душой</a>
+							<ul>
+								<li><a href="#">Аудио</a></li>
+								<li><a href="#">Видео</a></li>
+							</ul>
+			    		</li>
+		        		<li><a href="#">Блог</a></li>
+		    			<li><a href="#">Ноты</a>
+		    				<ul>
+								<li><a href="#">Бесплатные</a></li>
+								<li><a href="#">Заказать</a></li>
+							</ul>
+						</li>
+		    			<li><a href="#">Поддержка проекта</a></li>
+		        	</ul>
+		        </div>
 			</div>
 		</div>
 	</header>
