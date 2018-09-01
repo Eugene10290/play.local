@@ -12,6 +12,19 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:user-create',
+            ['only' => ['create', 'store']]);
+        $this->middleware('permission:user-update',
+            ['only' => ['edit', 'update']]);
+        $this->middleware('permission:user-delete',
+            ['only' => ['destroy']]);
+        $this->middleware('permission:user-list',
+            ['only' => ['index','show']]);
+    }
+
     /**
      * Отображение списка пользователей
      *

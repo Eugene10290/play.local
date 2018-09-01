@@ -151,6 +151,10 @@ return [
          * LaravelCollective Service Provider
          */
          Collective\Html\HtmlServiceProvider::class,
+        /**
+         * Ckeditor  Service Provider
+         */
+         Unisharp\Ckeditor\ServiceProvider::class,
 
         /*
          * Application Service Providers...

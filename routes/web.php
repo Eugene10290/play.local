@@ -22,13 +22,13 @@ Route::resource('blog', 'UserBlogController', ['only' => [
     'index', 'show'
 ]]);
 
-Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function(){
-    Route::get('/dashboard', function (){
-        return view('dashboard');
-    });
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('/', 'DashboardController@index');
     Route::resource('/roles','RoleController');
     Route::resource('/users','UserController');
     Route::resource('/blog', 'BlogController')->parameters([
         'blogs' => 'blog'
     ]);
+    //Entrust::routeNeedsPermission('admin/roles*', array('role-create', 'role-list', 'role-update', 'role-delete'));
 });
+    //Entrust::routeNeedsPermission('/roles*', array('role-create', 'role-list', 'role-update', 'role-delete'));
