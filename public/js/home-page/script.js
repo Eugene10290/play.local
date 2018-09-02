@@ -172,3 +172,10 @@
       interval: 5000,
       pause: true
     }));
+
+ $('.menu-btn').on('click', function(e){
+  e.preventDefault;
+  $(this).toggleClass('menu-btn_active');
+   $('.mnu').toggleClass('menu_active');
+ });
+

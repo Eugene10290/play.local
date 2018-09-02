@@ -11,12 +11,12 @@
 	<header>
 		<div class="container">	
 			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+				<div class="col-lg-4 col-md-4 col-sm-3 col-xs-4">
 		  			<div class="logo">
 		  				<h1><a href="#">Vitaliy Stulnev</a></h1>
 		  			</div>
 		  		</div>
-		  		<div class="col-lg-8 col-md-8 hidden-sm hidden-xs" style="height: 100%">
+		  		<div class="col-lg-8 col-md-8 col-sm-9 col-xs-8" style="height: 100%">
 		    		<ul class="mnu">
 			    		<li><a href="#">Играй с душой</a>
 							<ul>
@@ -33,6 +33,11 @@
 						</li>
 		    			<li><a href="#">Поддержка проекта</a></li>
 		        	</ul>
+		        	<div class="section">
+						<a href="#" class="menu-btn">
+							<span class="span"></span>
+						</a>
+					</div>
 		        </div>
 			</div>
 		</div>

@@ -60,7 +60,7 @@ header  .container  .row  ul  li  ul  li:hover {
 }
 
 header  .container  .row  ul  li  ul  li  a:hover {
-	color: #fff;
+	color: #fff !important;
 }
 .logo{
 	float: left;
@@ -87,7 +87,7 @@ header .row{
 }
 
 header .container{
-	width: 900px !important;
+	max-width: 900px !important;
 	height: 100%;
 }
 
@@ -128,3 +128,103 @@ footer  a{
 	width: 40px;
 	height: 40px;
 }
+
+a:focus{
+	outline: none;
+}
+
+.section{
+	float: right;
+	margin-top: 18px;
+	outline: none;
+}
+
+.menu-btn{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background-color: #fff;
+	border: 1px solid #565656;
+	border-radius: 50%;
+	position: relative;
+	outline: none;
+}
+.span, .span::before, .span::after{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 20px;
+	height: 2px;
+	background-color: #565656;
+	margin-top: -1px;
+	margin-left: -10px;
+}
+
+.span::before, .span::after{
+	content: '';
+	display: block;
+	transition: 0.2s;
+}
+
+.span::before{
+	transform: translateY(-5px);
+}
+
+.span::after{
+	transform: translateY(5px);
+}
+
+.menu-btn_active span:before{
+	transform: rotate(-35deg);
+	width: 10px;
+	transform-origin: left bottom;
+}
+
+.menu-btn_active span:after{
+	transform: rotate(35deg);
+	width: 10px;
+	transform-origin: left top;
+}
+
+@media only screen and (min-width : 992px){
+	.section{
+		display: none;
+	}
+}
+
+@media (max-width: 991px){
+	.mnu{
+		float: right;
+		flex-direction: column;
+		transition: 1s;
+		display: none;
+	}
+	.menu_active{
+		display: flex;
+	}
+	header .container .row ul li{
+		clear: left;
+	    display: block;
+	    width: 274px;
+	    z-index: 2;
+	    background-color: #fff;
+	    margin-right: -146px;
+	    margin-top: 0px;
+	    border-left: 1px solid #000;
+	}
+	header .container .row ul li:last-child{
+		border-bottom: 1px solid #000;
+	}
+
+	header .container .row ul li ul{
+		left: -140px;
+		top: -55px;
+		height: 47px;
+		border-top: 1px solid #000;
+	}
+	header .container .row ul li ul li{
+		border-right: 1px solid #000;
+	}
+}
+
+
