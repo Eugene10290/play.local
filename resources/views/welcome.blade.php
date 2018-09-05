@@ -71,7 +71,7 @@
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="news">
 							<a href="#"><h4>{{ $a->title }}</h4></a>
-							<p class="data1">{{ $a->published_at }}</p>
+							<p class="data1">{{ $a->getBeautifulDateAttribute() }}</p>
 							<img src="{{ asset('images/uploads/blogImages/'.$a->wall) }}" alt="">
 							<p class="blog-text1">{{ mb_strimwidth($a->body, 0, 450, '...') }}</p>
 							<a class="button" href="{{ url('blog/'.$a->slug) }}">Читать полностью</a>
