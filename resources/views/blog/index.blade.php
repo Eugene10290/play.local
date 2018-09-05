@@ -16,7 +16,7 @@
                 <tr>
                     <th scope="row">1</th>
                     <td>{{ $b->title }}</td>
-                    <td>{{ mb_strimwidth($b->body,0,70,"...") }}</td>
+                    <td>{{ mb_strimwidth($b->body, 0, 70, "...") }}</td>
                     <td>{{ $b->published_at }}</td>
                     <td>
                         <a class="btn btn-success" href="{{ url('blog/'.$b->slug) }}">Просмотр</a>

@@ -56,9 +56,9 @@
 			    	<div class="block-mnu3">
 			    		<img src="img/promobox3.jpg" alt="">
 			    		<h3>Блог</h3>
-			    	</div>	
+			    	</div>
 			    </div>
-		    </div>	
+		    </div>
 		</div>
 	</div>
 	<div class="container">
@@ -71,9 +71,7 @@
 							<p class="data1">{{ $a->published_at }}</p>
 							<img src="{{ asset('images/uploads/blogImages/'.$a->wall) }}" alt="">
 							<p class="blog-text1">{{ mb_strimwidth($a->body, 0, 450, '...') }}</p>
-							<a class="button">
-                            	<span>Читать полностью</span>
-                            </a>
+							<a class="button">Читать полностью</a>
 						</div>
 					</div>
 				@endforeach
@@ -93,9 +91,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
 					<div class="text">
 						<p class="blog-text1">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Реторический власти обеспечивает назад, от всех составитель строчка оксмокс пор, великий, сих, ты диких вскоре рекламных путь рукописи все что вершину...</p>
-						<a class="button">
-						    <span>Читать полностью</span>
-						</a>
+						<a class="button">Читать полностью</a>
 					</div>
 				</div>
 			</div>
@@ -111,9 +107,7 @@
 				</div>
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<p class="video-text1">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Реторический власти обеспечивает назад, от всех составитель строчка оксмокс пор, великий, сих, ты диких вскоре рекламных путь рукописи все что вершину...</p>
-					<a class="button">
-                        <span>Читать полностью</span>
-                    </a>
+					<button>Читать полностью</button>
 				</div>
 			</div>
 		</div>
