@@ -53,10 +53,13 @@
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-			    	<div class="block-mnu3">
-			    		<img src="img/promobox3.jpg" alt="">
-			    		<h3>Блог</h3>
-			    	</div>	
+					<a href="{{ url('blog') }}">
+						<div class="block-mnu3">
+							<img src="img/promobox3.jpg" alt="">
+							<h3>Блог</h3>
+						</div>
+					</a>
+
 			    </div>
 		    </div>	
 		</div>
