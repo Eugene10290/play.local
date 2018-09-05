@@ -71,7 +71,7 @@
 							<p class="data1">{{ $a->published_at }}</p>
 							<img src="{{ asset('images/uploads/blogImages/'.$a->wall) }}" alt="">
 							<p class="blog-text1">{{ mb_strimwidth($a->body, 0, 450, '...') }}</p>
-							<a class="button">Читать полностью</a>
+							<a class="button" href="{{ url('blog/'.$a->slug) }}">Читать полностью</a>
 						</div>
 					</div>
 				@endforeach
