@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','IndexController@index');
 
 Auth::routes();
 
@@ -29,6 +27,4 @@ Route::group(['prefix' => 'admin'], function(){
     Route::resource('/blog', 'BlogController')->parameters([
         'blogs' => 'blog'
     ]);
-    //Entrust::routeNeedsPermission('admin/roles*', array('role-create', 'role-list', 'role-update', 'role-delete'));
 });
-    //Entrust::routeNeedsPermission('/roles*', array('role-create', 'role-list', 'role-update', 'role-delete'));

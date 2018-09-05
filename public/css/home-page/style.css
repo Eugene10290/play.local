@@ -283,14 +283,14 @@ body {
   display: table;
 }
 
-.news1, .news2{
+.news{
   border-bottom: 4px double #ECECEC;
   margin-bottom: 30px;
   max-width: 940px;
   margin: 0 auto;
 }
 
-.news1 h4, .news2 h4{
+.news h4{
   text-align: center;
   font-size: 22px;
   font-weight: 500;
@@ -299,14 +299,14 @@ body {
   margin-top: 70px;
 }
 
-.data1, .data2{
+.data1{
   text-align: center;
   font-size: 13px;
   margin-bottom: 30px;
   margin-top: 20px;
 }
 
-.news1 img, .news2 img{
+.news img{
   max-width: 100%;
   height: auto;
   background-size: cover;
@@ -320,7 +320,7 @@ body {
   line-height: 1.5;
 } 
 
-.news1 button, .news2 button{
+.button{
   background-color: #fff;
   border: 1px solid #E6E6E6;
   color: #8c8c8c; 
@@ -330,7 +330,7 @@ body {
   margin-left: calc(50% - 85px);
 }
 
-.news1 button:hover, .news2 button:hover{
+.button:hover{
   background-color: #000;
   color: #fff;
   transition: 0.5s;

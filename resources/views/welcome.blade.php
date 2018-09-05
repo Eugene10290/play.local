@@ -64,24 +64,17 @@
 	<div class="container">
 		<div class="row">
 			<div class="preview-news">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<div class="news1">
-						<a href="#"><h4>Заголовок крутой статьи 1</h4></a>
-						<p class="data1">28.08.2018</p>
-						<img src="img/blog1.jpg" alt="">
-						<p class="blog-text1">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Реторический власти обеспечивает назад, от всех составитель строчка оксмокс пор, великий, сих, ты диких вскоре рекламных путь рукописи все что вершину...</p>
-						<button>Читать полностью</button>
+				@foreach($article as $a)
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="news">
+							<a href="#"><h4>{{ $a->title }}</h4></a>
+							<p class="data1">{{ $a->published_at }}</p>
+							<img src="{{ asset('images/uploads/blogImages/'.$a->wall) }}" alt="">
+							<p class="blog-text1">{{ mb_strimwidth($a->body, 0, 450, '...') }}</p>
+							<a class="button">Читать полностью</a>
+						</div>
 					</div>
-				</div>
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<div class="news2">
-						<a href="#"><h4>Заголовок крутой статьи 2</h4></a>
-						<p class="data2">29.08.2018</p>
-						<img src="img/blog2.jpg" alt="">
-						<p class="blog-text2">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Реторический власти обеспечивает назад, от всех составитель строчка оксмокс пор, великий, сих, ты диких вскоре рекламных путь рукописи все что вершину...</p>
-						<button>Читать полностью</button>
-					</div>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</div>
