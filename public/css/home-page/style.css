@@ -327,15 +327,31 @@ body {
 }
 
 .button{
+<<<<<<< HEAD
     background-color: #fff;
     border: 1px solid #E6E6E6;
     display: block;
     color: #8c8c8c;
+=======
+    margin-top: 20px;
+    background-color: #fff;
+    border: 1px solid #E6E6E6;
+    color: #8c8c8c;
+    display: block;
+>>>>>>> 7700e03c274437619f0ee6393dc4a4f08371db68
     width: 160px;
     height: 45px;
     margin-bottom: 40px;
     margin-left: calc(50% - 85px);
     cursor: pointer;
+<<<<<<< HEAD
+=======
+}
+.button span{
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+>>>>>>> 7700e03c274437619f0ee6393dc4a4f08371db68
 }
 
 .button:hover{
