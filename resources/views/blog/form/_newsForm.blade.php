@@ -6,7 +6,10 @@
     {!! Form::label('body', 'Контент') !!}
     {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
 </div>
-<?php echo date('Y-m-d\TH:i:s')?>
+<div class="form-group">
+    {!! Form::label('tag_list', 'Добавить тэги') !!}
+    {!! Form::select('tag_list[]', $tags, null, ['class' => 'form-control', 'multiple']) !!}
+</div>
 @if($publishedDate === 1)
     <div class="form-group">
         {!! Form::label('published_at',"Дата публикации :") !!}

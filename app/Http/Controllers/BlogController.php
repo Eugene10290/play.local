@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Requests\BlogRequest;
 use Illuminate\Contracts\Filesystem\Factory;
@@ -48,7 +49,8 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('blog.create');
+        $tags = \App\Tag::pluck('name', 'id'); // передаёт id тэга
+        return view('blog.create', compact('tags'));
     }
 
     /**
@@ -59,9 +61,7 @@ class BlogController extends Controller
      */
     public function store(BlogRequest $request)
     {
-        $input = $this->imageArticleRequest($request);
-
-        Auth::user()->blog()->create($input);
+        $this->createBlogArticle($request);
 
         return redirect()->route('blog.index');
     }
@@ -85,8 +85,10 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
+        $tags = Tag::pluck('name', 'id');
         $blog = Blog::findOrFail($id);
-        return view('blog.edit', compact('blog'));
+
+        return view('blog.edit', compact('blog', 'tags'));
     }
 
     /**
@@ -108,8 +110,9 @@ class BlogController extends Controller
         }else {
             $blog->update($request->all());
         }
+        $this->syncTags($blog, $request->input('tag_list'));
 
-        return redirect('admin/blog/'.$blog->slug);
+        return redirect('blog/'.$blog->slug);
     }
 
     /**
@@ -128,6 +131,34 @@ class BlogController extends Controller
 
         return redirect()->back();
     }
+
+    /**
+     * Создание новой статьи
+     *
+     * @param $request
+     * @return mixed
+     */
+    private function createBlogArticle($request) {
+        /**$input = $this->imageArticleRequest($request);
+        $blog = Auth::user()->blog()->create($input);
+        $blog->tags()->attach($request->input('tag_list'));*/
+        $input = $this->imageArticleRequest($request);
+        $blog = Auth::user()->blog()->create($input);
+        $this->syncTags($blog, $request->input('tag_list'));
+
+        return $blog;
+    }
+
+    /**
+     * Синхронизирует список тэгов в базе данных .т
+     *
+     * @param Request $request
+     * @param Blog $blog
+     */
+    private function syncTags(Blog $blog, $tags) {
+        $blog->tags()->sync($tags);
+    }
+
     /**
      * Функция обрезки и загрузки изображения для статьи, генерации слага
      *
@@ -146,7 +177,9 @@ class BlogController extends Controller
             $input['wall'] = $imageName;
             $title = $input['title'];
             $input['slug'] = str_slug($title);
+
             return $input;
         }
     }
+
 }

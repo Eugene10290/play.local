@@ -18,6 +18,14 @@
             @permission('blog-edit')
                 <a class="admin btn btn-primary btn-xs" href="{{url('admin/blog/'.$n->id.'/edit')}}">Редактировать</a>
             @endpermission
+            @unless($n->tags->isEmpty())
+                <h5>Тэги</h5>
+                <ul>
+                    @foreach($n->tags as $tag)
+                        <ul>{{ $tag->name }}</ul>
+                    @endforeach
+                </ul>
+            @endunless
             @permission('blog-delete')
                 {!! Form::open(['url' => 'admin/blog/'.$n->id, 'action' => 'BlogController@destroy', 'method' => 'DELETE', 'class' => 'admin button'])!!}
                 {!! Form::token() !!}
