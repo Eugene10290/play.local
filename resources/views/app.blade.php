@@ -6,6 +6,7 @@
     <link href="{{ asset('public/css/home-page/style.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('public/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" >
     <link href="{{ asset('public/css/head/style.css') }}" rel="stylesheet" type="text/css" >
+	<link href="{{ asset('public/css/main-blog-page/style.css') }}" rel="stylesheet" type="text/css" >
 </head>
 <body>
 	<header>
