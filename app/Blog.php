@@ -75,6 +75,14 @@ class Blog extends Model
     public function user() {
         return $this->belongsTo('App/User');
     }
+    /**
+     * Получение тэгов связанных с данной записью
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function tags() {
+        return $this->belongsToMany('App\Tag')->withTimestamps();
+    }
 
 }
 
