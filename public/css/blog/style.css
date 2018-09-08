@@ -1,0 +1,143 @@
+.news-description{
+    width: 900px;
+    margin: -225px auto 225px auto;
+    position: relative;
+}
+
+.container{
+    position: relative;
+}
+
+.admin-button{
+    display: inline-block;
+    margin-left: 0;
+}
+
+.admin{
+    margin-left: 100px;
+}
+
+.time{
+    display: block;
+    color: white;
+    margin-left: 100px;
+}
+
+.img-blog{
+    width: 100%;
+    height: 100%;
+}
+
+.img-block{
+    width: 900px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
+
+.news-image{
+    width: 900px;
+    margin: 0 auto;
+    display: block;
+}
+
+.h3{
+    font-size: 42px;
+    line-height: 44px;
+    color: white;
+    margin-left: 100px;
+    text-decoration: none;
+}
+
+.h3:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.container-blog{
+    width: 900px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
+}
+
+.img-blog:hover .overlay {
+    display: block;
+    background: rgba(0, 0, 0, .3);
+}
+
+@media (max-width: 991px){
+    .img-block, .news-image, .news-description {
+        width: 720px;
+    }
+}
+
+@media (max-width: 767px){
+    .img-block, .news-image, .news-description {
+        width: 560px;
+    }
+    .news-description {
+        margin: -160px auto 160px auto;
+    }
+    .h3 {
+        font-size: 32px;
+        margin-left: 40px;
+    }
+    .time{
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: 560px){
+    .img-block, .news-image, .news-description {
+        width: 455px;
+    }
+    .news-description {
+        margin: -130px auto 130px auto;
+    }
+    .h3 {
+        font-size: 32px;
+        margin-left: 40px;
+    }
+    .time{
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: 484px){
+    .img-block, .news-image, .news-description {
+        width: 340px;
+    }
+    .news-description {
+        margin: -115px auto 115px auto;
+    }
+    .h3 {
+        font-size: 24px;
+        margin-left: 25px;
+    }
+    h3{
+        margin-bottom: -5px;
+    }
+    .time{
+        margin-left: 25px;
+    }
+}
+
+@media (max-width: 338px){
+    .img-block, .news-image, .news-description {
+        width: 290px;
+    }
+}
+
+@media (max-width: 320px){
+    .img-block, .news-image, .news-description {
+        width: 290px;
+    }
+}
