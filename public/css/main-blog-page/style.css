@@ -1,14 +1,23 @@
+a:focus{
+    text-decoration: none;
+    color: #fff;
+}
+
+.h3{
+    line-height: 0.8 !important;
+}
+
 .news-image, .href-news-img {
     position: relative;
     width: 900px;
     height: auto;
-    margin: 0 auto;
+    margin: 0 auto 50px;
     display: block;
     cursor: default;
 }
 
 .news-description{
-    position: relative;
+    position: absolute;
     margin: -250px 200px 260px;
 }
 
@@ -33,22 +42,22 @@ time{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0.3);
     transition: background 0.5s ease;
 }
 
 .container:hover .overlay {
     display: block;
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0, 0, 0, 0.4);
 }
 .button-news {
-     position: absolute;
-     width: 160px;
-     text-align: center;
-     opacity: 0;
-     transition: opacity .35s ease;
+    position: absolute;
+    width: 200px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
     left: 215px;
-    bottom: 200px;
+    bottom: 90px;
  }
 
 .button-news-a {
@@ -56,15 +65,52 @@ time{
     padding: 15px 25px;
     text-align: center;
     color: white;
-    border: solid 2px white;
+    border: 1px solid rgba(255,255,255,.4);
     z-index: 1;
+    display: inline-block;
+    position: relative;
 }
+
+.button-news-a:before, .button-news-a:after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    box-sizing: border-box;
+}
+
+.button-news-a:before{
+    bottom: 0;
+    left: 0;
+    border-left: solid 2px white;
+    border-top: solid 2px white;
+    transition: opacity 0s ease .8s, width .2s ease .4s, height .2s ease .6s;
+}
+
+.button-news-a:after {
+    top: 0;
+    right: 0;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    transition: opacity 0s ease .4s, width .2s ease, height .2s ease .2s;
+}
+
+.button-news-a:hover:before, .button-news-a:hover:after{
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+}
+
+.button-news-a:hover:before {transition: 0s ease opacity 0s, .2s ease height, .2s ease width .2s;}
+.button-news-a:hover:after {transition: 0s ease opacity .4s, .2s ease height .4s , .2s ease width .6s;}
+
 .button-news-a:hover {
+    background: rgba(255, 255, 255, 0.14);
     color: #fff;
     text-decoration: none;
-    padding: 17px 27px;
-    transition-duration: 0.2s;
 }
+
 
 .container:hover .button-news {
     opacity: 1;
@@ -73,3 +119,74 @@ time{
 .button-news-a:hover .news-description{
     top: 90px;
 }
+
+@media (max-width: 1199px){
+    .news-image, .href-news-img{
+        width: inherit;
+    }
+    .news-description{
+        margin: -250px 100px 250px;
+    }
+    .button-news{
+        left: 117px;
+    }
+}
+
+@media (max-width: 991px){
+    .news-description{
+        margin: -250px 50px 250px;
+    }
+    .button-news{
+        left: 67px;
+        bottom: 75px;
+    }
+}
+
+@media (max-width: 600px){
+    .news-description{
+        margin: -200px 30px 250px;
+    }
+    .h3{
+        font-size: 26px !important;
+    }
+    h3 {
+        margin-bottom: 0;
+    }
+    time{
+        font-size: 12px;
+    }
+    .button-news{
+        left: 47px;
+        width: 160px;
+    }
+    .button-news-a {
+        width: 160px;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width:  466px){
+    h3{
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 0.7 !important;
+    }
+    .news-description{
+        margin: -160px 20px 235px;
+    }
+    .button-news{
+        left: 36px;
+        width: 160px;
+        bottom: 55px;
+    }
+}
+
+@media (max-width:  466px){
+    .h3{
+        font-size: 20px !important;
+    }
+    time{
+        font-size: 10px;
+    }
+}
+
