@@ -1,3 +1,7 @@
+@section('header')
+    <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
+    <
+@endsection
 <div class="form-group">
     {!!   Form::label('title', 'Заголовок') !!}
     {!! Form::text('title', null, ['class' => 'form-control']) !!}
@@ -8,8 +12,9 @@
 </div>
 <div class="form-group">
     {!! Form::label('tag_list', 'Добавить тэги') !!}
-    {!! Form::select('tag_list[]', $tags, null, ['class' => 'form-control', 'multiple']) !!}
+    {!! Form::select('tag_list[]', $tags, null, ['id' => 'tag_list', 'class' => ' ','multiple']) !!}
 </div>
+
 @if($publishedDate === 1)
     <div class="form-group">
         {!! Form::label('published_at',"Дата публикации :") !!}
@@ -28,3 +33,11 @@
 <div class="form-group">
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control']) !!}
 </div>
+@section('footer')
+    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+    <script>
+        $('#tag_list').select2();
+    </script>
+
+
+@endsection

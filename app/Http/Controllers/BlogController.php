@@ -133,15 +133,12 @@ class BlogController extends Controller
     }
 
     /**
-     * Создание новой статьи
+     * Создание новой статьи и применение к ней тэгов
      *
      * @param $request
      * @return mixed
      */
     private function createBlogArticle($request) {
-        /**$input = $this->imageArticleRequest($request);
-        $blog = Auth::user()->blog()->create($input);
-        $blog->tags()->attach($request->input('tag_list'));*/
         $input = $this->imageArticleRequest($request);
         $blog = Auth::user()->blog()->create($input);
         $this->syncTags($blog, $request->input('tag_list'));
