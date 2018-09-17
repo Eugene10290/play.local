@@ -15,7 +15,7 @@
 			<div class="row">
 				<div class="col-lg-4 col-md-4 col-sm-3 col-xs-4">
 		  			<div class="logo">
-		  				<h1><a href="#">Vitaliy Stulnev</a></h1>
+		  				<h1><a href="{{ url('/') }}">Vitaliy Stulnev</a></h1>
 		  			</div>
 		  		</div>
 		  		<div class="col-lg-8 col-md-8 col-sm-9 col-xs-8" style="height: 100%">
@@ -26,7 +26,7 @@
 								<li><a href="#">Видео</a></li>
 							</ul>
 			    		</li>
-		        		<li><a href="#">Блог</a></li>
+		        		<li><a href="{{ url('/blog') }}">Блог</a></li>
 		    			<li><a href="#">Ноты</a>
 		    				<ul>
 								<li><a href="#">Бесплатные</a></li>
