@@ -1,3 +1,8 @@
+@section('header')
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('resources/libs/BsMultiSelect/BsMultiSelect.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+@endsection
 <div class="form-group">
     {!!   Form::label('title', 'Заголовок') !!}
     {!! Form::text('title', null, ['class' => 'form-control']) !!}
@@ -6,7 +11,11 @@
     {!! Form::label('body', 'Контент') !!}
     {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
 </div>
-<?php echo date('Y-m-d\TH:i:s')?>
+<div class="form-group">
+    {!! Form::label('tag_list', 'Добавить тэги') !!}
+    {!! Form::select('tag_list[]', $tags, null, ['id' => 'tag_list', 'class' => 'form-control','multiple', 'style' => 'display: non']) !!}
+</div>
+
 @if($publishedDate === 1)
     <div class="form-group">
         {!! Form::label('published_at',"Дата публикации :") !!}
@@ -25,3 +34,10 @@
 <div class="form-group">
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control']) !!}
 </div>
+@section('footer')
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="{{ asset('resources/libs/BsMultiSelect/BsMultiSelect.js') }}"></script>
+    <script>$("select").bsMultiSelect();</script>
+@endsection

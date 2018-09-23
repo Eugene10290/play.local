@@ -27,4 +27,5 @@ Route::group(['prefix' => 'admin'], function(){
     Route::resource('/blog', 'BlogController')->parameters([
         'blogs' => 'blog'
     ]);
+
 });
