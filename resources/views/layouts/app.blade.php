@@ -12,8 +12,8 @@
 
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-@yield('header')
+    <script src="{{ asset('js/app.js') }}"></script>
+
 
 
 
@@ -23,7 +23,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    @yield('header')
 </head>
 <body>
     <div id="app">
@@ -80,14 +80,7 @@
             @yield('content')
         </main>
     </div>
-    <!--<script src="http://code.jquery.com/jquery.js"></script>-->
-
-    <script
-            src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
 
     @yield('footer')
-
 </body>
 </html>
