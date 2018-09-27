@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layouts\app')
 @section('content')
 		<div id="slider" class="slider">
 		    <ol class="slider__indicators">

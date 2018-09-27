@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layouts\app')
 @section('content')
     @foreach($blog as $n)
         <a href="{{ url('admin/blog', $n->slug) }}"><img class="news-image"  src="{{ asset('images/uploads/blogImages/'.$n->wall) }}" alt="{{ $n->title }}"></a>
