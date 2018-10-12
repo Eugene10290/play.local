@@ -7,7 +7,7 @@
                 <h1>{{ $blog->title }}</h1>
                 <p class="data">{{ $blog->getBeautifulDateAttribute() }}</p>
                 <p class="mainImg"><img src="{{ asset('images/uploads/blogImages/'.$blog->wall) }}"></p>
-                <p class="text"> {{ $blog->body }}</p>
+                <p class="text"> {!! $blog->body !!}</p>
                 <p></p>
             </div>
         </div>
