@@ -28,6 +28,7 @@
     <link href="{{ asset('public/css/head/style.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('public/css/main-blog-page/style.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('public/css/blog-page/style.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('public/css/registration/style.css') }}" rel="stylesheet" type="text/css" >
     @yield('header')
 </head>
 <body>
@@ -56,10 +57,7 @@
                                 <!-- Authentication Links -->
                                 @guest
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Вход') }}</a>
                                 </li>
                                 @else
                                 <li class="nav-item dropdown">
@@ -128,7 +126,6 @@
     </div>
 
     <script src="{{ asset('public/js/header/script.js') }}"></script>
-
     @yield('footer')
 </body>
 </html>
