@@ -1,8 +1,8 @@
 @section('header')
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{ asset('resources/libs/BsMultiSelect/BsMultiSelect.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <script src='{{ asset('public/js/tinymce/tinymce.min.js') }}'></script>
+    <link rel="stylesheet" href="{{ asset('public/js/select2/select2.min.css') }}">
     <script>
         var editor_config = {
             path_absolute : "/",
@@ -11,7 +11,8 @@
                 "advlist autolink lists link image charmap print preview hr anchor pagebreak",
                 "searchreplace wordcount visualblocks visualchars code fullscreen",
                 "insertdatetime media nonbreaking save table contextmenu directionality",
-                "emoticons template paste textcolor colorpicker textpattern"
+                "emoticons template paste textcolor colorpicker textpattern",
+                "fullscreen"
             ],
             toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
             relative_urls: false,
@@ -50,7 +51,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('tag_list', 'Добавить тэги') !!}
-    {!! Form::select('tag_list[]', $tags, null, ['id' => 'tag_list', 'class' => 'form-control','multiple', 'style' => 'display: non']) !!}
+    {!! Form::select('tag_list[]', $tags, null, ['id' => 'tag_list', 'class' => 'form-control select_tags','multiple', 'style' => 'display: non', 'name' => 'tags']) !!}
 </div>
 
 @if($publishedDate === 1)
@@ -75,9 +76,11 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <script src="{{ asset('resources/libs/BsMultiSelect/BsMultiSelect.js') }}"></script>
-    <script>$("select").bsMultiSelect();</script>
+    <script src="{{ asset('public/js/select2/select2.full.min.js') }}"></script>
     <script>
-
+        $(document).ready(function () {
+            $('.select_tags').select2();
+        });
     </script>
+
 @endsection

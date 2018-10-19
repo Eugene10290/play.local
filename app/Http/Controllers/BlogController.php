@@ -100,6 +100,7 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
+        dd($request);
         $blog = Blog::findOrFail($id);
         $input = $this->imageArticleRequest($request);
         if($input !== null) {

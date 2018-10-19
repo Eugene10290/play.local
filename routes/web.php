@@ -19,6 +19,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('blog', 'UserBlogController', ['only' => [
     'index', 'show'
 ]]);
+Route::get('/tagsRequest', function () {
+    if(Request::ajax()){
+        return "все норм";
+    }
+});
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/', 'DashboardController@index');
     Route::resource('/roles','RoleController');
