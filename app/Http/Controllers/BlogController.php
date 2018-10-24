@@ -61,7 +61,9 @@ class BlogController extends Controller
      */
     public function store(BlogRequest $request)
     {
-        $this->createBlogArticle($request);
+        $blog = $this->createBlogArticle($request);
+        $tags = $request->input('tag_list');
+        $this->validateNewTag($tags, $blog);
 
         return redirect()->route('blog.index');
     }
@@ -100,9 +102,10 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($request);
         $blog = Blog::findOrFail($id);
+        $tags = $request->input('tag_list');
         $input = $this->imageArticleRequest($request);
+
         if($input !== null) {
             $old_image = $blog->wall;
             $disk = $this->factory->disk('uploads'); //config->filesystems
@@ -111,7 +114,9 @@ class BlogController extends Controller
         }else {
             $blog->update($request->all());
         }
-        $this->syncTags($blog, $request->input('tag_list'));
+
+        $this->validateNewTag($tags, $blog);
+
 
         return redirect('blog/'.$blog->slug);
     }
@@ -134,6 +139,28 @@ class BlogController extends Controller
     }
 
     /**
+     * Отделяет новые тэги от уже созданных
+     *
+     * @param $tags
+     * @param $blog
+     * @return bool
+     */
+    private function validateNewTag($tags, $blog) {
+        $newTag = new Tag();
+        foreach ($tags as $key => $value) {
+            if( !ctype_digit($value) ) { //Новые тэги
+                $newTag->name = $value;
+                $newTag->save();
+            }else{
+                $oldTags = $value; //Старые тэги
+            }
+        }
+        $this->syncTags($blog, $oldTags);
+        $blog->tags()->attach($newTag->id);
+
+        return true;
+    }
+    /**
      * Создание новой статьи и применение к ней тэгов
      *
      * @param $request
@@ -142,13 +169,12 @@ class BlogController extends Controller
     private function createBlogArticle($request) {
         $input = $this->imageArticleRequest($request);
         $blog = Auth::user()->blog()->create($input);
-        $this->syncTags($blog, $request->input('tag_list'));
 
         return $blog;
     }
 
     /**
-     * Синхронизирует список тэгов в базе данных .т
+     * Синхронизирует список тэгов в базе данных .
      *
      * @param Request $request
      * @param Blog $blog

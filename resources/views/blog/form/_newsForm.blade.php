@@ -51,7 +51,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('tag_list', 'Добавить тэги') !!}
-    {!! Form::select('tag_list[]', $tags, null, ['id' => 'tag_list', 'class' => 'form-control select_tags','multiple', 'style' => 'display: non', 'name' => 'tags']) !!}
+    {!! Form::select('tag_list[]', $tags, null, ['id' => 'tag_list', 'class' => 'form-control select_tags','multiple']) !!}
 </div>
 
 @if($publishedDate === 1)
@@ -79,7 +79,11 @@
     <script src="{{ asset('public/js/select2/select2.full.min.js') }}"></script>
     <script>
         $(document).ready(function () {
-            $('.select_tags').select2();
+            $('#tag_list').select2({
+                placeholder: 'Примените до 4 тэгов',
+                tags: true,
+                closeOnSelect: false
+            });
         });
     </script>
 
