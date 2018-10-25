@@ -70,7 +70,7 @@
 							<a href="#"><h4>{{ $a->title }}</h4></a>
 							<p class="data1">{{ $a->published_at }}</p>
 							<img src="{{ asset('images/uploads/blogImages/'.$a->wall) }}" alt="">
-							<p class="blog-text1">{{ mb_strimwidth($a->body, 0, 450, '...') }}</p>
+							<p class="blog-text1">{!! strip_tags( mb_strimwidth($a->body, 0, 450, '...') ) !!}</p>
 							<a class="button" href="{{ url('blog/'.$a->slug) }}">
                             	<span>Читать полностью</span>
                        		</a>
