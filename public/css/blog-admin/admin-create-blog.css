@@ -1,0 +1,13 @@
+label{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-primary{
+    width: 200px;
+    margin-left: 0;
+}
+
+.btn{
+    font-size: 12px;
+}
