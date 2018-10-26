@@ -7,7 +7,15 @@ label{
     width: 200px;
     margin-left: 0;
 }
+.back{
+    font-size: 14px!important;
+}
 
 .btn{
-    font-size: 12px;
+    font-size: 14px;
+}
+
+.create_news_btn{
+    margin-top: 50px;
+    margin-bottom: 40px;
 }
