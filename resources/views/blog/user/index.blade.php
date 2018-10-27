@@ -12,7 +12,7 @@
                 <h5>Тэги</h5>
                 <ul>
                     @foreach($n->tags as $tag)
-                        <ul><a href="{{ url('tags/'.$tag->name) }}">{{$tag->name}} </a></ul>
+                        <li><a href="{{ url('tags/'.$tag->name) }}">{{$tag->name}} </a></li>
                     @endforeach
                 </ul>
             @endunless
