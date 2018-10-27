@@ -139,7 +139,7 @@ class BlogController extends Controller
     }
 
     /**
-     * Отделяет новые тэги от уже созданных
+     * Отделяет новые тэги от уже созданных и применяет к статье
      *
      * @param $tags
      * @param $blog
@@ -154,8 +154,12 @@ class BlogController extends Controller
             }else{
                 $oldTags = $value; //Старые тэги
             }
+            if( !isset($oldTags) ) { //Если старых тэгов нет, то создаём и применяем новые
+                $this->syncTags($blog, $newTag);
+            }else {
+                $this->syncTags($blog, $oldTags);
+            }
         }
-        $this->syncTags($blog, $oldTags);
         $blog->tags()->attach($newTag->id);
 
         return true;

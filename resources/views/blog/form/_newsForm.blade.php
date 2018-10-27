@@ -37,7 +37,6 @@
                 });
             }
         };
-
         tinymce.init(editor_config);
     </script>
 @endsection
@@ -82,7 +81,7 @@
             $('#tag_list').select2({
                 placeholder: 'Примените до 4 тэгов',
                 tags: true,
-                closeOnSelect: false
+                maximumSelectionLength: 4
             });
         });
     </script>
