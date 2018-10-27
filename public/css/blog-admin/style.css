@@ -19,4 +19,17 @@
 
 .button-edit-news-admin{
     width: 50% !important;
+    margin-bottom: 10px;
+}
+
+.btn{
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.49);
+}
+
+.table-blog{
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.49);
+}
+
+.head-table-blog{
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.49);
 }

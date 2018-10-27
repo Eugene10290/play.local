@@ -144,3 +144,7 @@
     margin-top: -15px;
     margin-bottom: 0px;
 }
+
+.form-control{
+    font-size: 14px !important;
+}

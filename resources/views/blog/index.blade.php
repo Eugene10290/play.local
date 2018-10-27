@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
         <table class="table table-striped table-hover">
-            <thead>
+            <thead class="head-table-blog">
             <tr>
                 <th>#</th>
                 <th>Название</th>
@@ -13,7 +13,7 @@
             <a class="btn btn-success" href="{{ url('admin/blog/create') }}">Создать запись</a>
             <tbody>
             @foreach($blog as $b)
-                <tr>
+                <tr class="table-blog">
                     <th scope="row">1</th>
                     <td>{{ $b->title }}</td>
                     <td>{{ mb_strimwidth($b->body, 0, 70, "...") }}</td>
