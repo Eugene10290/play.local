@@ -19,8 +19,8 @@
                     <td>{{ mb_strimwidth($b->body, 0, 70, "...") }}</td>
                     <td>{{ $b->published_at }}</td>
                     <td>
-                        <a class="btn btn-success" href="{{ url('blog/'.$b->slug) }}">Просмотр</a>
-                        <a class="btn btn-primary" href="{{ url('admin/blog/'.$b->id.'/edit') }}">Редактировать</a>
+                        <a class="btn btn-success button-view-news-admin" href="{{ url('blog/'.$b->slug) }}">Просмотр</a>
+                        <a class="btn btn-primary button-edit-news-admin" href="{{ url('admin/blog/'.$b->id.'/edit') }}">Редактировать</a>
                         {!! Form::open(['url' => 'admin/blog/'.$b->id, 'action' => 'BlogController@destroy', 'method' => 'DELETE', 'class' => 'admin button'])!!}
                         {!! Form::token() !!}
                         {!! Form::submit('Удалить',

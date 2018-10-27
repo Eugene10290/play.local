@@ -10,3 +10,13 @@
     border-color: #2c2c2c;
     box-shadow: 0 0 0 .2rem rgb(53, 53, 53);
 }
+
+.button-view-news-admin{
+    margin: 0;
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+.button-edit-news-admin{
+    width: 50% !important;
+}
