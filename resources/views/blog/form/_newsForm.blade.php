@@ -81,8 +81,7 @@
         $(document).ready(function () {
             $('#tag_list').select2({
                 placeholder: 'Примените до 4 тэгов',
-                tags: true,
-                closeOnSelect: false
+                tags: true
             });
         });
     </script>
