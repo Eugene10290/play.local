@@ -29,6 +29,8 @@
     <link href="{{ asset('public/css/main-blog-page/style.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('public/css/blog-page/style.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('public/css/registration/style.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('public/css/blog-admin/style.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('public/css/blog-admin/admin-create-blog.css') }}" rel="stylesheet" type="text/css" >
     @yield('header')
 </head>
 <body>

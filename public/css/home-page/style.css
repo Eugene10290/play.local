@@ -319,13 +319,13 @@ body {
   line-height: 1.5;
 }
 
-.button span{
+.button_read span{
     margin-top: 12px;
     display: block;
     text-align: center;
 }
 
-.button{
+.button_read{
     background-color: #fff;
     border: 1px solid #E6E6E6;
     color: #8c8c8c;
@@ -338,7 +338,7 @@ body {
     cursor: pointer;
 }
 
-.button:hover{
+.button_read:hover{
   color: #fff;
   transition: 0.5s;
   background-color: rgb(51, 51, 51);
