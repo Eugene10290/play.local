@@ -30,6 +30,7 @@
 
         </div>
     @endforeach
+    {{ $blog->links() }}
     <script src="{{ asset('public/js/jquery-3.3.1.min.js') }}"></script>
 
 @endsection

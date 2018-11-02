@@ -3,7 +3,7 @@
         <table class="table table-striped table-hover">
             <thead>
             <tr>
-                <th>#</th>
+
                 <th>Название</th>
                 <th>Текст</th>
                 <th>Дата публикации</th>
@@ -14,7 +14,6 @@
             <tbody>
             @foreach($blog as $b)
                 <tr>
-                    <th scope="row">1</th>
                     <td>{{ $b->title }}</td>
                     <td>{{ mb_strimwidth($b->body, 0, 70, "...") }}</td>
                     <td>{{ $b->published_at }}</td>
@@ -36,4 +35,5 @@
             @endforeach
             </tbody>
         </table>
+        {{ $blog->links() }}
 @endsection
