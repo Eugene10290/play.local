@@ -5,7 +5,8 @@
             <a href="{{ url('/blog', $n->slug) }}">
                 <div class="bgc-img"></div>
                 <img class="news-image"  src="{{ asset('images/uploads/blogImages/'.$n->wall) }}" alt="{{ $n->title }}">
-             </a>
+                <div class="bgc-img2"></div>
+            </a>
             <div class="news-description">
                 <h3 class="article-title"><a href="{{ url('admin/blog', $n->slug) }}">{{ $n->title }}</a></h3>
                 <time class="time-article" datetime="{{$n->published_at}}"><span class="fa fa-clock-o fa-1x"></span>{{$n->getBeautifulDateAttribute()}}</time>
@@ -15,7 +16,7 @@
                 @unless($n->tags->isEmpty())
                 <ul class="tag-common">
                     @foreach($n->tags as $tag)
-                    <li class="tag-blog"><a href="{{ url('tags/'.$tag->name) }}">{{$tag->name}} </a></li>
+                    <li class="tag-blog"><a href="{{ url('tags/'.$tag->name) }}" class="tag-name">{{$tag->name}} </a></li>
                     @endforeach
                 </ul>
                 @endunless

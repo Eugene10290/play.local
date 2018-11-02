@@ -24,12 +24,23 @@ a{
     width: 100%;
     height: auto;
     box-shadow: 0 0px 25px rgba(33, 37, 41, 0.35);
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
-.img-blog-article:hover{
+.img-blog-article:hover .news-image{
     transform: scale(1.01);
-    transition: 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
+.img-blog-article:hover .bgc-img{
+    background-color: #000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    border-radius: 10px;
+    z-index: 1;
+    transition: all 0.4s ease-out;
 }
 
 .bgc-img{
@@ -38,22 +49,22 @@ a{
     width: 100%;
     height: 100%;
     opacity: .5;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .img-blog-article{
+    border-radius: 10px;
     position: relative;
     width: 1100px;
     height: auto;
     display: block;
     margin: 50px auto 150px;
-    -moz-transition: all 0.4s ease-out;
-    -o-transition: all 0.4s ease-out;
-    -webkit-transition: all 0.4s ease-out;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .news-description{
+    z-index: 5;
     position: absolute;
     margin: -230px 130px;
 }
@@ -64,7 +75,7 @@ a{
 }
 
 .button-edit{
-    position: absolute;
+    position: relative;
     bottom: 200px;
 }
 
@@ -91,6 +102,15 @@ time, .time-article{
     display: inline-block;
     margin-right: 20px;
     margin-top: 15px;
+    padding: 5px 20px;
+    border-radius: 13px;
+    border: 1px solid #fff;
+    background-color: rgba(0, 0, 0, 0.13);
+}
+
+.tag-blog:hover{
+    background-color: rgba(0, 0, 0, 0.36);
+    transition-duration:  0.3s;
 }
 
 .tag-common{
@@ -98,6 +118,7 @@ time, .time-article{
     padding: 0;
     float: left;
     margin-top: -15px;
+    margin-left: -200px;
 }
 
 .overlay {
