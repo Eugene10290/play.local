@@ -1,5 +1,9 @@
-a:focus{
+a:focus, a:hover{
     text-decoration: none;
+    color: #fff;
+}
+
+a{
     color: #fff;
 }
 
@@ -7,33 +11,93 @@ a:focus{
     line-height: 0.8 !important;
 }
 
-.news-image, .href-news-img {
+.href-news-img {
     position: relative;
-    width: 900px;
+    width: 1100px;
     height: auto;
     margin: 0 auto 50px;
     display: block;
     cursor: default;
 }
 
-.news-description{
-    position: absolute;
-    margin: -250px 200px 260px;
+.news-image{
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0px 25px rgba(33, 37, 41, 0.35);
+    border-radius: 20px;
 }
 
-.h3{
+.img-blog-article:hover{
+    transform: scale(1.01);
+    transition: 0.4s ease-out;
+}
+
+.bgc-img{
+    background-color: #000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    border-radius: 20px;
+}
+
+.img-blog-article{
+    position: relative;
+    width: 1100px;
+    height: auto;
+    display: block;
+    margin: 50px auto 150px;
+    -moz-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+    cursor: pointer;
+}
+
+.news-description{
+    position: absolute;
+    margin: -230px 130px;
+}
+
+.h3, .article-title{
     color: #fff;
     font-size: 40px;
 }
 
-time{
+.button-edit{
+    position: absolute;
+    bottom: 200px;
+}
+
+.delete-button{
+    position: absolute;
+    bottom: 200px;
+    left: 230px;
+    width: 140px!important;
+}
+
+time, .time-article{
     color: #fff;
+    display: inline-block;
+    float: right;
 }
 
 .h3:hover{
     color: #fff;
     font-size: 40px;
     text-decoration: none;
+}
+
+.tag-blog{
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+.tag-common{
+    display: inline-block;
+    padding: 0;
+    float: left;
+    margin-top: -15px;
 }
 
 .overlay {
@@ -58,7 +122,7 @@ time{
     transition: opacity .35s ease;
     left: 215px;
     bottom: 90px;
- }
+}
 
 .button-news-a {
     width: 200px;
@@ -189,4 +253,3 @@ time{
         font-size: 10px;
     }
 }
-
