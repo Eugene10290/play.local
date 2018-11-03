@@ -51,9 +51,30 @@
                             <!-- Right Side Of Navbar -->
                             <ul class="navbar-nav ml-auto">
                                 <!-- Authentication Links -->
+                                <ul class="mnu">
+                                    <li><a href="#">Играй с душой</a>
+                                        <ul>
+                                            <li><a href="#">Аудио</a></li>
+                                            <li><a href="#">Видео</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{{ url('/blog') }}">Блог</a></li>
+                                    <li><a href="#">Ноты</a>
+                                        <ul>
+                                            <li><a href="#">Бесплатные</a></li>
+                                            <li><a href="#">Заказать</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Поддержка проекта</a></li>
+                                </ul>
+                                <div class="section">
+                                    <a href="#" class="menu-btn">
+                                        <span class="span"></span>
+                                    </a>
+                                </div>
                                 @guest
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Вход') }}</a>
+                                    <a class="nav-link gate-site" href="{{ route('register') }}">{{ __('Вход') }}</a>
                                 </li>
                                 @else
                                 <li class="nav-item dropdown">
@@ -61,34 +82,13 @@
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
 
-                                    <ul class="mnu">
-                                        <li><a href="#">Играй с душой</a>
-                                            <ul>
-                                                <li><a href="#">Аудио</a></li>
-                                                <li><a href="#">Видео</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="{{ url('/blog') }}">Блог</a></li>
-                                        <li><a href="#">Ноты</a>
-                                            <ul>
-                                                <li><a href="#">Бесплатные</a></li>
-                                                <li><a href="#">Заказать</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Поддержка проекта</a></li>
-                                    </ul>
-                                    <div class="section">
-                                        <a href="#" class="menu-btn">
-                                            <span class="span"></span>
-                                        </a>
-                                    </div>
-
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
+                                        <a class="dropdown-item" href="admin">{{ __('Админ-панель') }}</a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             @csrf

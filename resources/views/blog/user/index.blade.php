@@ -11,15 +11,15 @@
             <div class="news-description">
                 <h3 class="article-title"><a href="{{ url('admin/blog', $n->slug) }}">{{ $n->title }}</a></h3>
                 <time class="time-article" datetime="{{$n->published_at}}"><span class="fa fa-clock-o fa-1x"></span>{{$n->getBeautifulDateAttribute()}}</time>
-                @permission('blog-edit')
-                    <a class="button-edit admin btn btn-primary btn-xs" href="{{url('admin/blog/'.$n->id.'/edit')}}">Редактировать</a>
-                @endpermission
-                @unless($n->tags->isEmpty())
                 <ul class="tag-common">
                     @foreach($n->tags as $tag)
                     <li class="tag-blog"><a href="{{ url('tags/'.$tag->name) }}" class="tag-name">{{$tag->name}} </a></li>
                     @endforeach
                 </ul>
+                @permission('blog-edit')
+                    <a class="button-edit admin btn btn-primary btn-xs" href="{{url('admin/blog/'.$n->id.'/edit')}}">Редактировать</a>
+                @endpermission
+                @unless($n->tags->isEmpty())
                 @endunless
                 @permission('blog-delete')
                     {!! Form::open(['url' => 'admin/blog/'.$n->id, 'action' => 'BlogController@destroy', 'method' => 'DELETE', 'class' => 'admin button'])!!}

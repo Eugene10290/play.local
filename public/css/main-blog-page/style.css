@@ -79,6 +79,7 @@ a{
     margin: 50px auto 150px;
     cursor: pointer;
     overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.47);
 }
 
 .news-description{
@@ -95,7 +96,8 @@ a{
 .button-edit{
     position: absolute;
     bottom: 200px;
-    float: right;
+    float: left;
+    display: flex !important;
 }
 
 .delete-button{

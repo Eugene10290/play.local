@@ -143,6 +143,7 @@ header .container{
 
 .navbar{
 	border: 0px;
+	max-height: 88px;
 }
 
 .navbar-nav{
@@ -172,6 +173,11 @@ header .container{
 header{
 	background-color: #fff;
 	height: 90px;
+}
+
+.gate-site{
+	position: relative;
+	margin: 50%;
 }
 
 footer .row{
