@@ -1,6 +1,7 @@
 @extends('layouts\app')
 @section('content')
-    @foreach($blog as $n)
+    <link href="{{ asset('public/css/main-blog-page/style.css') }}" rel="stylesheet" type="text/css" >
+@foreach($blog as $n)
         <div class="img-blog-article"  alt="{{ $n->title }}")">
             <a href="{{ url('/blog', $n->slug) }}">
                 <div class="bgc-img"></div>

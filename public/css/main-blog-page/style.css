@@ -43,6 +43,24 @@ a{
     transition: all 0.4s ease-out;
 }
 
+.btn{
+    padding: 10px 45px;
+    display: inline-block;
+    float: left;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.175);
+    cursor: pointer;
+    border-radius: 4px;
+    border-color: rgba(0,0,0,0.175);
+    color: #000;
+}
+
+.btn:hover{
+    background-color: rgb(51, 51, 51);
+    transition: 0.2s;
+}
+
 .bgc-img{
     background-color: #000;
     position: absolute;
@@ -75,8 +93,9 @@ a{
 }
 
 .button-edit{
-    position: relative;
+    position: absolute;
     bottom: 200px;
+    float: right;
 }
 
 .delete-button{
@@ -118,7 +137,6 @@ time, .time-article{
     padding: 0;
     float: left;
     margin-top: -15px;
-    margin-left: -200px;
 }
 
 .overlay {

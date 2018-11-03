@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<link href="{{ asset('public/css/blog-admin/style.css') }}" rel="stylesheet" type="text/css" >
         <table class="table table-striped table-hover">
             <thead class="head-table-blog">
             <tr>
@@ -24,7 +25,7 @@
                         {!! Form::token() !!}
                         {!! Form::submit('Удалить',
                              [
-                                'class' => 'btn btn-danger btn-xs confirm',
+                                'class' => 'btn btn-danger btn-xs confirm delete',
                                 'onclick' => 'return confirm("Удалить статью?")'
                              ])
                          !!}

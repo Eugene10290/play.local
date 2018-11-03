@@ -1,5 +1,6 @@
 @extends('layouts\app')
 @section('content')
+	<link href="{{ asset('public/css/home-page/style.css') }}" rel="stylesheet" type="text/css" >
 		<div id="slider" class="slider">
 		    <ol class="slider__indicators">
 		      <li class="slider__indicator slider__indicator_active" data-slide-to="0"></li>
@@ -118,4 +119,6 @@
 	</div>
 
     <script src="{{ asset('public/js/jquery-3.3.1.min.js') }}"></script>
+	<script src="{{ asset('public/js/header/script.js') }}"></script>
+	<script src="{{ asset('public/js/home-page/script.js') }}"></script>
 @endsection

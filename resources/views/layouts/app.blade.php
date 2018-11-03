@@ -23,14 +23,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/css/home-page/style.css') }}" rel="stylesheet" type="text/css" >
     <link href="{{ asset('public/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" >
     <link href="{{ asset('public/css/head/style.css') }}" rel="stylesheet" type="text/css" >
-    <link href="{{ asset('public/css/main-blog-page/style.css') }}" rel="stylesheet" type="text/css" >
-    <link href="{{ asset('public/css/blog-page/style.css') }}" rel="stylesheet" type="text/css" >
-    <link href="{{ asset('public/css/registration/style.css') }}" rel="stylesheet" type="text/css" >
-    <link href="{{ asset('public/css/blog-admin/style.css') }}" rel="stylesheet" type="text/css" >
-    <link href="{{ asset('public/css/blog-admin/admin-create-blog.css') }}" rel="stylesheet" type="text/css" >
     @yield('header')
 </head>
 <body>

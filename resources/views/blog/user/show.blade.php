@@ -1,5 +1,6 @@
 @extends('layouts\app')
 @section('content')
+<link href="{{ asset('public/css/blog-page/style.css') }}" rel="stylesheet" type="text/css" >
     <title>{{ $blog->title }}</title>
     <div class="container">
         <div class="row">
