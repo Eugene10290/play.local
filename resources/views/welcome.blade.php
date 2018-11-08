@@ -68,13 +68,20 @@
 				@foreach($article as $a)
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="news">
-							<a href="#"><h4>{{ $a->title }}</h4></a>
-							<p class="data1">{{ $a->published_at }}</p>
-							<img src="{{ asset('images/uploads/blogImages/'.$a->wall) }}" alt="">
+							<div class="img-blog-article"  alt="">
+								<a href="{{ url('/blog')}}">
+									<div class="bgc-img"></div>
+									<img src="{{ asset('images/uploads/blogImages/'.$a->wall) }}" alt="">
+									<a href="#"><h4>{{ $a->title }}</h4></a>
+									<p class="data1">{{ $a->published_at }}</p>
+								</a>
+							</div>
 							<p class="blog-text1">{!! strip_tags( mb_strimwidth($a->body, 0, 450, '...') ) !!}</p>
-							<a class="button" href="{{ url('blog/'.$a->slug) }}">
-                            	<span>Читать полностью</span>
-                       		</a>
+							<a class="button-link" href="{{ url('blog/'.$a->slug) }}">
+								<div class="button">
+									<span>Читать полностью</span>
+								</div>
+							</a>
 						</div>
 					</div>
 				@endforeach
@@ -94,9 +101,10 @@
 				<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
 					<div class="text">
 						<p class="blog-text1">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Реторический власти обеспечивает назад, от всех составитель строчка оксмокс пор, великий, сих, ты диких вскоре рекламных путь рукописи все что вершину...</p>
-						<a class="button">
-							<span>Скачать</span>
-
+						<a class="button-link" href="#">
+							<div class="button download-btn">
+								<span>Скачать</span>
+							</div>
 						</a>
 					</div>
 				</div>
