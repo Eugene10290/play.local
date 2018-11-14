@@ -19,7 +19,6 @@ class ProductController extends Controller
 
         return view('shop.index', compact('products'));
     }
-
     /**
      * Функция помещает данный товар в корзину
      *
@@ -36,7 +35,11 @@ class ProductController extends Controller
 
         return redirect('shops');
     }
-
+    /**
+     * Отображение корзины со списком товаров
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getCart(){
         if(!Session::has('cart')) {
             return view('shop.shopping-cart', compact('products'));
@@ -45,6 +48,22 @@ class ProductController extends Controller
         $cart = new Cart($oldCart);
         $totalPrice = $cart->totalPrice;
         $products = $cart->items;
+
         return view('shop.shopping-cart', compact('products', 'totalPrice'));
+    }
+    /**
+     * Отправка на страницу оплаты и передача общей стоимости
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function getCheckout() {
+        if(!Session::has('cart')) {
+            return view('shop.shopping-cart');
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        $total = $cart->totalPrice;
+
+        return view('shop.checkout', compact('total'));
     }
 }

@@ -1,12 +1,5 @@
 @extends('layouts.app')
-@section('cart')
-    <li>
-        <a href="{{ url('shopping-cart') }}">
-            <i class="fa fa-shopping-cart">Корзина</i>
-            <span class="badge" style="background-color: red">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
-        </a>
-    </li>
-@endsection
+
 @section('content')
     @if(Session::has('cart'))
         <div class="row">
@@ -14,7 +7,7 @@
                 <ul class="list-group">
                     @foreach($products as $product)
                         <li class="list-group-item">
-                            <span class="badge">{{ $product['qty'] }}</span>
+                            <span class="badge">К-во: {{ $product['qty'] }}</span>
                             <strong>{{ $product['item']['title'] }}</strong>
                             <span class="label label-success">{{ $product['price'] }} $</span>
                             <div class="btn-group">
@@ -41,7 +34,7 @@
         <hr>
         <div class="row">
             <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                <button type="button" class="btn btn-success">Оплатить</button>
+                <a href="{{ url('checkout') }}" type="button" class="btn btn-success">Оплатить</a>
             </div>
         </div>
     @else

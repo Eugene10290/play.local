@@ -80,7 +80,12 @@
                                         <li>
                                             <a href="#">Поддержка проекта</a>
                                         </li>
-                                        @yield('cart')
+                                        <li>
+                                            <a href="{{ url('shopping-cart') }}">
+                                                <i class="fa fa-shopping-cart">Корзина</i>
+                                                <span class="badge" style="background-color: red">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
+                                            </a>
+                                        </li>
                                     </ul>
                                     <div class="section">
                                         <a href="#" class="menu-btn">

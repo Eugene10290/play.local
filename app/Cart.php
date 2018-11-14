@@ -25,7 +25,7 @@ class Cart
     /**
      * Функция добавления товара в корзину.
      *
-     * @param $item
+     * @param $item - nj
      * @param $id
      */
     public function add($item, $id) {
