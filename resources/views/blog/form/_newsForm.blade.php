@@ -1,6 +1,5 @@
 @section('header')
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <script src='{{ asset('public/js/tinymce/tinymce.min.js') }}'></script>
     <link rel="stylesheet" href="{{ asset('public/js/select2/select2.min.css') }}">
     <script>

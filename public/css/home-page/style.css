@@ -368,7 +368,6 @@ body {
     height: auto;
     display: block;
     margin: 50px auto 25px;
-    cursor: pointer;
     overflow: hidden;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.47);
 }
@@ -478,10 +477,13 @@ body {
 }
 
 .preview-sheets img{
+    border-radius: 5px;
+    box-shadow: 0 0px 20px rgba(0,0,0,.175);
     float: left;
     display: inline;
     position: relative;
     margin-right: 40px;
+    margin-bottom: 85px;
 }
 
 .preview-sheets p{
@@ -522,6 +524,8 @@ body {
 .video-div{
   border-top: 4px double #ECECEC;
   margin-top: 50px;
+  width: 900px;
+  margin: 0 auto;
 }
 
 .video-div h4{
@@ -536,13 +540,16 @@ body {
 
 .video-div p{
   margin: 30px auto;
+    font-size: 17px;
 }
 
 .video-div iframe{
-  margin: 0 auto;
-  display: block;
-  width: inherit;
-  height: 515px;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    height: 600px;
+    border-radius: 5px;
+    box-shadow: 0 0px 20px rgba(0,0,0,.175);
 }
 
 .video-div button{
@@ -610,6 +617,19 @@ body {
 	#prev-btn{
 		left: 15px;
 	}
+    .news h4 {
+        font-size: 30px;
+        top: 55%;
+        text-align: left;
+    }
+    .blog-text1{
+        text-align: left;
+        margin-left: 40px;
+        margin-right: 35px;
+    }
+    .download-btn{
+        margin-left: 40px;
+    }
   .preview-sheets img{
     width: 335px;
     height: 365px;
@@ -631,13 +651,21 @@ body {
 }
 
 @media (max-width: 560px){
-  .block-mnu1, .block-mnu2, .block-mnu3{
-    width: inherit;
-    height: inherit;
-  }
-  .slide-img {
-    height: 365px;
-  }
+    .block-mnu1, .block-mnu2, .block-mnu3{
+        width: inherit;
+        height: inherit;
+    }
+    .slide-img {
+        height: 365px;
+    }
+    .download-btn{
+        margin: 0 auto;
+    }
+    .preview-sheets p {
+        margin-top: -70px;
+        text-align: center;
+    }
+
   .short-mnu img{
     width: inherit;
     height: inherit;
@@ -667,7 +695,6 @@ body {
     height: 300px;
   }
   .preview-sheets p{
-    line-height: 0;
     font-size: 14px;
   }
   .div{
@@ -687,6 +714,16 @@ body {
   .div{
     width: 235px;
   }
+    .news h4 {
+        font-size: 25px;
+        top: 45%;}
+    .data1{
+        margin-top: 5px;
+    }
+    .blog-text1{
+        margin-left: 0;
+        margin-right: 0;
+    }
   .text{
     width: 235px;
   }

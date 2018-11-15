@@ -69,12 +69,10 @@
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="news">
 							<div class="img-blog-article"  alt="">
-								<a href="{{ url('/blog')}}">
 									<div class="bgc-img"></div>
 									<img src="{{ asset('images/uploads/blogImages/'.$a->wall) }}" alt="">
-									<a href="#"><h4>{{ $a->title }}</h4></a>
+									<h4>{{ $a->title }}</h4>
 									<p class="data1">{{ $a->published_at }}</p>
-								</a>
 							</div>
 							<p class="blog-text1">{!! strip_tags( mb_strimwidth($a->body, 0, 450, '...') ) !!}</p>
 							<a class="button-link" href="{{ url('blog/'.$a->slug) }}">
