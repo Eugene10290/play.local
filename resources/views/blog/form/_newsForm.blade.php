@@ -1,6 +1,6 @@
 @section('header')
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-    <script src='{{ asset('public/js/tinymce/tinymce.min.js') }}'></script>
+    <script src="{{ asset('public/js/tinymce/tinymce.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('public/js/select2/select2.min.css') }}">
     <script>
         var editor_config = {
