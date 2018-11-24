@@ -3,6 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
+        <a class="btn btn-primary back" href="{{ url('admin/') }}">Назад</a>
         <div class="panel panel-default">
             <div class="panel-heading"><h1>Управление Ролями</h1></div>
           <div class="panel-heading">

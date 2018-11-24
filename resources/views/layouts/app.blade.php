@@ -74,7 +74,7 @@
                                 </div>
                                 @guest
                                 <li class="nav-item">
-                                    <a class="nav-link gate-site" href="{{ route('register') }}">{{ __('Вход') }}</a>
+                                    <a class="nav-link gate-site" href="{{ route('login') }}">{{ __('Вход') }}</a>
                                 </li>
                                 @else
                                 <li class="nav-item dropdown">

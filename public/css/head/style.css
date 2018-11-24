@@ -188,6 +188,8 @@ footer{
 	border-top: 4px double #ECECEC;
 	text-align: center;
 	width: 100%;
+	display: flex;
+	flex: 0 0 auto;
 }
 
 footer img{

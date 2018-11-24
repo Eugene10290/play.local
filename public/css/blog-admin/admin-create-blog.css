@@ -1,3 +1,27 @@
+.btn{
+    background-color: #fff;
+    width: 33%;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.175);
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 50px;
+    color: #000;
+    border-color: #fff;
+    height: auto;
+}
+
+.back{
+    margin: 20px -200px;
+}
+
+
+.btn:hover{
+    background-color: rgb(51, 51, 51);
+    transition: 0.2s;
+}
+
 label{
     font-size: 14px!important;
     font-weight: 600!important;
@@ -16,8 +40,7 @@ label{
 }
 
 .create_news_btn{
-    margin: 50px 41%;
-    margin-bottom: 40px;
+    margin: 0 auto 20px;
 }
 
 .btn-success{

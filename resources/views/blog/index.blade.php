@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <link href="{{ asset('public/css/blog-admin/style.css') }}" rel="stylesheet" type="text/css" >
+    <a class="btn btn-primary back" href="{{ url('admin/') }}">Назад</a>
         <table class="table table-striped table-hover">
             <thead class="head-table-blog">
             <tr>
