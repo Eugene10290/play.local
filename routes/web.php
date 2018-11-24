@@ -19,6 +19,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('blog', 'UserBlogController', ['only' => [
     'index', 'show'
 ]]);
+Route::get('/shops','ProductController@index');
+Route::get('add-to-cart/{id}','ProductController@getAddToCart');
+Route::get('shopping-cart', 'ProductController@getCart');
+Route::get('/checkout', 'ProductController@getCheckout');
+Route::post('success', 'ProductController@postCheckout');
 Route::get('tags/{tags}', 'TagsController@show');
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/', 'DashboardController@index');

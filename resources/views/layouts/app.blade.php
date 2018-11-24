@@ -14,14 +14,12 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 
-
-
-
 <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('public/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" >
     <link href="{{ asset('public/css/head/style.css') }}" rel="stylesheet" type="text/css" >
@@ -73,15 +71,43 @@
                                     </a>
                                 </div>
                                 @guest
-                                <li class="nav-item">
-                                    <a class="nav-link gate-site" href="{{ route('login') }}">{{ __('Вход') }}</a>
-                                </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link gate-site" href="{{ route('login') }}">{{ __('Вход') }}</a>
+                                    </li>
                                 @else
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
-
+                                    <ul class="mnu">
+                                        <li><a href="#">Играй с душой</a>
+                                            <ul>
+                                                <li><a href="#">Аудио</a></li>
+                                                <li><a href="#">Видео</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="{{ url('/blog') }}">Блог</a></li>
+                                        <li><a href="#">Ноты</a>
+                                            <ul>
+                                                <li><a href="{{ url('shops') }}">Купить</a></li>
+                                                <li><a href="#">Заказать</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Поддержка проекта</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('shopping-cart') }}">
+                                                <i class="fa fa-shopping-cart">Корзина</i>
+                                                <span class="badge" style="background-color: red">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="section">
+                                        <a href="#" class="menu-btn">
+                                            <span class="span"></span>
+                                        </a>
+                                    </div>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
