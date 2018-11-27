@@ -49,6 +49,7 @@
                             <!-- Right Side Of Navbar -->
                             <ul class="navbar-nav ml-auto">
                                 <!-- Authentication Links -->
+                                @guest
                                 <ul class="mnu">
                                     <li><a href="#">Играй с душой</a>
                                         <ul>
@@ -64,13 +65,18 @@
                                         </ul>
                                     </li>
                                     <li><a href="#">Поддержка проекта</a></li>
+                                    <li>
+                                        <a href="{{ url('shopping-cart') }}">
+                                            <i class="fa fa-shopping-cart">Корзина</i>
+                                            <span class="badge" style="background-color: red">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
+                                        </a>
+                                    </li>
                                 </ul>
                                 <div class="section">
                                     <a href="#" class="menu-btn">
                                         <span class="span"></span>
                                     </a>
                                 </div>
-                                @guest
                                     <li class="nav-item">
                                         <a class="nav-link gate-site" href="{{ route('login') }}">{{ __('Вход') }}</a>
                                     </li>
