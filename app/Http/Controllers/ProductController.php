@@ -2,17 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Guzzle\Http\Client;
 use Illuminate\Http\Request;
 use App\LiqPay;
 use App\Cart;
+use App\Order;
+use App\User;
+use Auth;
 
 use App\Product;
 use Session;
 
 
+
 class ProductController extends Controller
 {
+
+    const PUBLIC_KEY = 'i14515347728';
+    const PRIVATE_KEY = '6xlWSk41j2cdtBJvpeZTsnprtnbhAKzkZe0Pixlx';
     /**
      * Возвоащает view со списком товаров
      *
@@ -68,36 +74,59 @@ class ProductController extends Controller
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         $total = $cart->totalPrice;
-        $html = $this->liqpaySet($total);
+        $order_id = 'order_'.rand(10000, 99999);
+        $html = $this->liqpaySet($total, $order_id);
+
+        $order = new Order();
+        $order->cart = serialize($cart); //объект в строку для хранения в бд
+        $order->order_id = $order_id;
+        $order->total = $total;
+        Auth::user()->orders()->save($order);
 
         return view('shop.checkout', compact('total','html'));
     }
 
-    public function postCheckout(Request $request) {
-        if(!Session::has('cart')) {
-            return redirect()->route('shopping-cart');
-        }
+    public function paymentStatus() {
+        $lastOrder = Auth::user()->orders()->orderBy('id','desc')->first();
+        $order_id = $lastOrder->order_id;
 
+        $liqpay = new LiqPay(self::PUBLIC_KEY, self::PRIVATE_KEY);
+
+        $res = $liqpay->api("request", array(
+            'action'        => 'status',
+            'version'       => '3',
+            'order_id'      => $order_id
+        ));
+
+        if($res->status === 'sandbox'){ //Если оплата прошла успешно
+            $lastOrder->status = true;
+            $lastOrder->save();
+            return redirect('order_history')->with('message','Успешная оплата');
+        }
     }
 
-    private function liqpaySet($total) {
-        $public_key = "i14515347728";
-        $private_key = "6xlWSk41j2cdtBJvpeZTsnprtnbhAKzkZe0Pixlx";
+    /**
+     * Формирование формы для проведения оплаты LiqPay
+     *
+     * @param $total
+     * @param $order_id
+     * @return string
+     */
+    private function liqpaySet($total, $order_id) {
         $params = [
             'action'         => 'pay',
             'amount'         => $total,
             'currency'       => 'USD',
             'description'    => 'Покупка нот в магазине "Играй с душой" ',
-            'order_id'       => 'notes_'.rand(10000, 99999),
+            'order_id'       => $order_id,
             'version'        => '3',
             'sandbox'        => '1',
-            'public_key'     => 'i14515347728',
-            'result_url'     => 'play.local/success'
+            'public_key'     =>  self::PUBLIC_KEY,
+            'result_url'     => 'play.local/status'
         ];
-        $liqpay = new LiqPay($public_key, $private_key);
+        $liqpay = new LiqPay(self::PUBLIC_KEY, self::PRIVATE_KEY);
         $html = $liqpay->cnb_form($params);
 
         return $html;
-
     }
 }
