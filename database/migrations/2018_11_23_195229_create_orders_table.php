@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->integer('total');
             $table->integer('user_id');
             $table->string('order_id');
-            $table->boolean('status');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

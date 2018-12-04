@@ -9,12 +9,19 @@ class Order extends Model
     public function user() {
         return $this->belongsTo('App\User');
     }
-
     /**
      * Статус оплаты платежа
+     *
      * @var array
      */
-    protected $attributes = [
-        'status' => false
-    ];
+    /**
+     * Оплаченные заказы
+     *
+     * @param $query
+     */
+    public function paidOrders($query) {
+        $query->where('status', '=', 'true');
+    }
+
+
 }

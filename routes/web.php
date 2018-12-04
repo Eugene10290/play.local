@@ -34,3 +34,6 @@ Route::group(['prefix' => 'admin'], function(){
     ]);
 
 });
+Route::group(['prefix' => 'user'], function() {
+    Route::get('profile', 'ProfileController@index');
+});

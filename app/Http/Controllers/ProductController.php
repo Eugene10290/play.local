@@ -16,9 +16,13 @@ use Session;
 
 class ProductController extends Controller
 {
-
     const PUBLIC_KEY = 'i14515347728';
     const PRIVATE_KEY = '6xlWSk41j2cdtBJvpeZTsnprtnbhAKzkZe0Pixlx';
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => 'index']);
+    }
     /**
      * Возвоащает view со списком товаров
      *
@@ -86,10 +90,14 @@ class ProductController extends Controller
         return view('shop.checkout', compact('total','html'));
     }
 
+    /**
+     * Подтверждение платежа и проверка его на оплату
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function paymentStatus() {
-        $lastOrder = Auth::user()->orders()->orderBy('id','desc')->first();
+        $lastOrder = Auth::user()->orders()->orderBy('id','desc')->first(); //получение последнего платежа на проверку
         $order_id = $lastOrder->order_id;
-
         $liqpay = new LiqPay(self::PUBLIC_KEY, self::PRIVATE_KEY);
 
         $res = $liqpay->api("request", array(
@@ -101,10 +109,12 @@ class ProductController extends Controller
         if($res->status === 'sandbox'){ //Если оплата прошла успешно
             $lastOrder->status = true;
             $lastOrder->save();
-            return redirect('order_history')->with('message','Успешная оплата');
+            Session::forget('cart'); //очистка корзины
+            return redirect('order_history')->with('success','Успешная оплата');
+        }else {
+            redirect()->back()->with('error', 'Ошибка оплаты');
         }
     }
-
     /**
      * Формирование формы для проведения оплаты LiqPay
      *
