@@ -179,6 +179,33 @@ header{
 	position: relative;
 	margin: 50%;
 }
+.basket{
+	position: fixed;
+	bottom: 100px;
+	right: 20px;
+	width: 52px;
+	height: 52px;
+	z-index: 999;
+}
+
+.img-basket{
+	width: 52px;
+	height: 52px;
+}
+
+.badge{
+	position: fixed;
+	padding: 10px 12px;
+	border-radius: 26px;
+	margin-right: 45px;
+	text-decoration: none;
+	right: 17px;
+	bottom: 110px;
+}
+
+.badge:hover, basket:hover{
+	text-decoration: none;
+}
 
 footer .row{
 	display: inline;

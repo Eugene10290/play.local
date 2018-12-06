@@ -1,26 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="{{ asset('public/css/shop/shoping-cart.css') }}" rel="stylesheet" type="text/css" >
     @if(Session::has('cart'))
         <div class="row">
             <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
                 <ul class="list-group">
                     @foreach($products as $product)
                         <li class="list-group-item">
-                            <span class="badge">К-во: {{ $product['qty'] }}</span>
-                            <strong>{{ $product['item']['title'] }}</strong>
-                            <span class="label label-success">{{ $product['price'] }} $</span>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="">Уменьшить на 1</a>
-                                        <a href="">Уменишить всё</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <img class="img-responsive item" src="{{ asset( $product['item']['imagePath'] )  }}" alt="...">
+                            <p class="sheets-title">{{ $product['item']['title'] }}</p>
+                            <span class="price">{{ $product['price'] }} $</span>
                         </li>
                     @endforeach
                 </ul>
@@ -28,13 +18,17 @@
         </div>
         <div class="row">
             <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                <strong>Всего: {{ $totalPrice }} $</strong>
+                <strong class="cash">Всего: {{ $totalPrice }} $</strong>
             </div>
         </div>
         <hr>
         <div class="row">
             <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                <a href="{{ url('checkout') }}" type="button" class="btn btn-success">Оплатить</a>
+                <a href="{{ url('checkout') }}">
+                    <div class="button download-btn">
+                        <span>Перейти к оплате</span>
+                    </div>
+                </a>
             </div>
         </div>
     @else

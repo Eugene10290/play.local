@@ -1,0 +1,90 @@
+.list-group {
+    padding-left: 0;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.cash{
+    margin-left: 30px;
+    font-size: 19px;
+}
+
+.price{
+    float: right;
+    margin-top: 40px;
+    font-size: 40px;
+}
+
+.img-responsive{
+    width: 100px;
+    height: auto;
+    float: left;
+}
+
+.button{
+    margin: 20px auto 120px;
+    width: 180px;
+    height: 45px;
+    background-color: #fff;
+    position: relative;
+    text-align: center;
+    clear: left;
+    padding-top: 10px;
+    border: 1px solid #0b2e13;
+    border-radius: 5px;
+}
+
+.clearfix{
+    margin-top: 65px;
+}
+
+.button:before,
+.button:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    box-sizing: border-box;
+}
+.button:before {
+    bottom: 0;
+    left: 0;
+    border-left: 1px solid #0b2e13;
+    border-top: 1px solid #0b2e13;
+    border-radius: 5px;
+}
+.button:after {
+    top: 0;
+    right: 0;
+    border-right: 1px solid #0b2e13;
+    border-bottom: 1px solid #0b2e13;
+    border-radius: 5px;
+}
+.button:hover:before,
+.button:hover:after{
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+}
+.button:hover:before {transition: 0s ease opacity 0s, .2s ease height, .2s ease width .2s;}
+.button:hover:after {transition: 0s ease opacity .4s, .2s ease height .4s , .2s ease width .6s;}
+.button:hover {
+    background: rgba(255,255,255,.2);
+    border: none;
+    padding-top: 11px;
+}
+
+a, a:hover, a:active, a:focus{
+    color: #000;
+}
+
+.sheets-title{
+    font-size: 18px;
+    margin-left: 10px;
+    display: inline-block;
+    width: 250px;
+}
+

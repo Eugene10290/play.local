@@ -49,7 +49,6 @@
                             <!-- Right Side Of Navbar -->
                             <ul class="navbar-nav ml-auto">
                                 <!-- Authentication Links -->
-                                @guest
                                 <ul class="mnu">
                                     <li><a href="#">Играй с душой</a>
                                         <ul>
@@ -60,23 +59,17 @@
                                     <li><a href="{{ url('/blog') }}">Блог</a></li>
                                     <li><a href="#">Ноты</a>
                                         <ul>
-                                            <li><a href="#">Бесплатные</a></li>
-                                            <li><a href="#">Заказать</a></li>
+                                            <li><a href="{{ url('shops') }}">Купить</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Поддержка проекта</a></li>
-                                    <li>
-                                        <a href="{{ url('shopping-cart') }}">
-                                            <i class="fa fa-shopping-cart">Корзина</i>
-                                            <span class="badge" style="background-color: red">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
-                                        </a>
-                                    </li>
                                 </ul>
                                 <div class="section">
                                     <a href="#" class="menu-btn">
                                         <span class="span"></span>
                                     </a>
                                 </div>
+                                @guest
                                     <li class="nav-item">
                                         <a class="nav-link gate-site" href="{{ route('login') }}">{{ __('Вход') }}</a>
                                     </li>
@@ -85,35 +78,6 @@
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
-                                    <ul class="mnu">
-                                        <li><a href="#">Играй с душой</a>
-                                            <ul>
-                                                <li><a href="#">Аудио</a></li>
-                                                <li><a href="#">Видео</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="{{ url('/blog') }}">Блог</a></li>
-                                        <li><a href="#">Ноты</a>
-                                            <ul>
-                                                <li><a href="{{ url('shops') }}">Купить</a></li>
-                                                <li><a href="#">Заказать</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Поддержка проекта</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ url('shopping-cart') }}">
-                                                <i class="fa fa-shopping-cart">Корзина</i>
-                                                <span class="badge" style="background-color: red">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <div class="section">
-                                        <a href="#" class="menu-btn">
-                                            <span class="span"></span>
-                                        </a>
-                                    </div>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
@@ -137,6 +101,10 @@
 
         <main class="py-4">
             @yield('content')
+            <a href="{{ url('shopping-cart') }}" class="basket">
+                <span class="badge" style="background-color: red">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
+                <img src="{{ asset('public/img/basket.png') }}" class="img-basket" alt="">
+            </a>
         </main>
         <footer>
             <div class="container">

@@ -8,27 +8,12 @@
     </li>
 @endsection
 @section('content')
-    <style>
-        .item {
-            width: 200px;
-            height: 300px;
-        }
-        .btn {
-            float: none;
-        }
-        .price{
-            font-weight: bold;
-            font-size: 16px;
-        }
-        .thumbnail .descriprion {
-            color: #7f7f7f;
-        }
-    </style>
+<link href="{{ asset('public/css/shop/style.css') }}" rel="stylesheet" type="text/css" >
     <div class="container">
-        <h1>Платные ноты</h1>
+        <h1 class="sheeps">Платные ноты</h1>
         <div class="row">
             @foreach($products as $product)
-                <div class="col-sm-6 col-md-4">
+                <div class="col-sm-6 col-md-6">
                     <div class="thumbnail">
                         <img class="img-responsive item" src="{{ asset( $product->imagePath )  }}" alt="...">
                         <div class="caption">
@@ -36,7 +21,11 @@
                             <p class="descriprion">{{ $product->description }} </p>
                             <div class="clearfix">
                                 <div class="pull-left price">${{ $product->price }}</div>
-                                <a href="{{ url('/add-to-cart/'. $product->id) }}" class="btn btn-success pull-right" role="button">В корзину</a>
+                                <a class="button-link pull-right" href="{{ url('/add-to-cart/'. $product->id) }}">
+                                    <div class="button download-btn">
+                                        <span>Купить</span>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
