@@ -30,15 +30,13 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <div class="row" style="width: 100%;">
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="height: 100%">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height: 100%">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                    </div>
-
                     <div class="col-lg-10 col-md-10 col-sm-9 col-xs-8" style="height: 100%">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <!-- Left Side Of Navbar -->
@@ -96,6 +94,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </nav>
 

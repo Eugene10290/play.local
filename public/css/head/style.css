@@ -183,28 +183,34 @@ header{
 	position: fixed;
 	bottom: 100px;
 	right: 20px;
-	width: 52px;
-	height: 52px;
 	z-index: 999;
+	width: 80px;
+	height: 80px;
+	background-color: rgba(255, 255, 255, 0.66);
+	border-radius: 50%;
 }
 
 .img-basket{
 	width: 52px;
 	height: 52px;
+	margin-top: 14px;
+	margin-left: 9px;
 }
 
 .badge{
+	right: 75px;
+	bottom: 128px;
 	position: fixed;
-	padding: 10px 12px;
+	padding: 7px 9px;
 	border-radius: 26px;
-	margin-right: 45px;
 	text-decoration: none;
-	right: 17px;
-	bottom: 110px;
 }
 
-.badge:hover, basket:hover{
+.badge:hover, .basket:hover{
 	text-decoration: none;
+	background-color: #fff;
+	outline: 0;
+	opacity: 1;
 }
 
 footer .row{

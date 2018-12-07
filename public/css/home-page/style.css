@@ -659,10 +659,6 @@ body {
 }
 
 @media (max-width: 560px){
-    .block-mnu1, .block-mnu2, .block-mnu3{
-        width: inherit;
-        height: inherit;
-    }
     .short-mnu h3::after {
         margin: 7px 40%;
     }

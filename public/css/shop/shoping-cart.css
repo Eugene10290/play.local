@@ -36,6 +36,12 @@
     border-radius: 5px;
 }
 
+.basket-zero{
+    text-align: center;
+    margin-bottom: 300px;
+    margin-top: 70px;
+}
+
 .clearfix{
     margin-top: 65px;
 }
