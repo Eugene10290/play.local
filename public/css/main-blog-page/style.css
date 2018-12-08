@@ -226,14 +226,15 @@ time, .time-article{
 }
 
 @media (max-width: 1199px){
-    .news-image, .href-news-img{
-        width: inherit;
-    }
     .news-description{
         margin: -250px 100px 250px;
     }
     .button-news{
         left: 117px;
+    }
+    .img-blog-article{
+        width: auto;
+        margin: 150px 10px;
     }
 }
 

@@ -625,19 +625,17 @@ body {
     }
     .blog-text1{
         text-align: left;
-        margin-left: 40px;
-        margin-right: 35px;
     }
     .download-btn{
         margin-left: 40px;
     }
   .preview-sheets img{
-    width: 335px;
-    height: 365px;
+      width: 270px;
+      height: auto;
   }
   .div{
     width: 335px;
-    margin: 0 auto;
+    margin: 70px auto;
   }
   .text{
     width: 335px;

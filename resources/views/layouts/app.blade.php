@@ -29,14 +29,12 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <div class="row" style="width: 100%;">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="height: 100%">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div class="row" >
+                    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="height: 100%">
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            {{ config('app.name', 'Laravel') }}
+                        </a>
+                    </div>
                     <div class="col-lg-10 col-md-10 col-sm-9 col-xs-8" style="height: 100%">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <!-- Left Side Of Navbar -->
@@ -62,11 +60,6 @@
                                     </li>
                                     <li><a href="#">Поддержка проекта</a></li>
                                 </ul>
-                                <div class="section">
-                                    <a href="#" class="menu-btn">
-                                        <span class="span"></span>
-                                    </a>
-                                </div>
                                 @guest
                                     <li class="nav-item">
                                         <a class="nav-link gate-site" href="{{ route('login') }}">{{ __('Вход') }}</a>
@@ -80,7 +73,7 @@
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            {{ __('Выход') }}
                                         </a>
                                         <a class="dropdown-item" href="admin">{{ __('Админ-панель') }}</a>
 
@@ -104,6 +97,61 @@
                 <span class="badge" style="background-color: red">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
                 <img src="{{ asset('public/img/basket.png') }}" class="img-basket" alt="">
             </a>
+            <div class="d-lg-none d-md-none hidden-sm col-xs-8" style="height: 100%">
+            <div class="header">
+                <div class="hamburger">
+                    <button class="button-ham hamburger__button js-menu__toggle">
+                        <span class="hamburger__label">Open menu</span>
+                    </button>
+                </div>
+                <nav class="menu">
+                    <ul class="list menu__list">
+                        <li class="menu__group">
+                            <a href="#0" class="link menu__link">Играй с душой</a>
+                            <ul>
+                                <li><a href="#">Аудио</a></li>
+                                <li><a href="#">Видео</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu__group">
+                            <a href="{{ url('/blog') }}" class="link menu__link">Блог</a>
+                        </li>
+                        <li class="menu__group">
+                            <a href="#" class="link menu__link">Ноты</a>
+                            <ul>
+                                <li><a href="{{ url('shops') }}">Купить</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu__group">
+                            <a href="#0" class="link menu__link">Поддержка проекта</a>
+                        </li>
+                        @guest
+                        <li class="menu__group nav-item unlogin">
+                            <a class="nav-link gate-site1" href="{{ route('login') }}">{{ __('Вход') }}</a>
+                        </li>
+                        @else
+                        <li class="menu__group nav-item dropdown unlogin">
+                            <a id="" class="nav-link dropdown-toggle unlogin-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+                            <div class="menu__group" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item1" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                           document.getElementById('logout-form').submit();">
+                                    {{ __('Выход') }}
+                                </a>
+                                <a class="dropdown-item1" href="admin">{{ __('Админ-панель') }}</a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                        @endguest
+                    </ul>
+                </nav>
+            </div>
+            </div>
         </main>
         <footer>
             <div class="container">
