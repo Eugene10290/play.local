@@ -2,17 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use Guzzle\Http\Client;
 use Illuminate\Http\Request;
 use App\LiqPay;
 use App\Cart;
+use App\Order;
+use App\User;
+use Auth;
 
 use App\Product;
 use Session;
 
 
+
 class ProductController extends Controller
 {
+    const PUBLIC_KEY = 'i14515347728';
+    const PRIVATE_KEY = '6xlWSk41j2cdtBJvpeZTsnprtnbhAKzkZe0Pixlx';
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => 'index']);
+    }
     /**
      * Возвоащает view со списком товаров
      *
@@ -39,6 +49,30 @@ class ProductController extends Controller
         $request->session()->put('cart', $cart);
 
         return redirect('shops');
+    }
+    public function getReduceByOne($id) {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->reduceByOne($id);
+        if(count($cart->items) > 0){
+            Session::put('cart', $cart);
+        }else {
+            Session::forget('cart');
+        }
+
+        return redirect('shopping-cart');
+    }
+    public function getRemoveItem($id) {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->removeItem($id);
+        if(count($cart->items) > 0){
+            Session::put('cart', $cart);
+        }else {
+            Session::forget('cart');
+        }
+
+        return redirect('shopping-cart');
     }
     /**
      * Отображение корзины со списком товаров
@@ -68,36 +102,65 @@ class ProductController extends Controller
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         $total = $cart->totalPrice;
-        $html = $this->liqpaySet($total);
+        $order_id = 'order_'.rand(10000, 99999);
+        $html = $this->liqpaySet($total, $order_id);
+
+        $order = new Order();
+        $order->cart = serialize($cart); //объект в строку для хранения в бд
+        $order->order_id = $order_id;
+        $order->total = $total;
+        Auth::user()->orders()->save($order);
 
         return view('shop.checkout', compact('total','html'));
     }
 
-    public function postCheckout(Request $request) {
-        if(!Session::has('cart')) {
-            return redirect()->route('shopping-cart');
+    /**
+     * Подтверждение платежа и проверка его на оплату
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function paymentStatus() {
+        $lastOrder = Auth::user()->orders()->orderBy('id','desc')->first(); //получение последнего платежа на проверку
+        $order_id = $lastOrder->order_id;
+        $liqpay = new LiqPay(self::PUBLIC_KEY, self::PRIVATE_KEY);
+
+        $res = $liqpay->api("request", array(
+            'action'        => 'status',
+            'version'       => '3',
+            'order_id'      => $order_id
+        ));
+
+        if($res->status === 'sandbox'){ //Если оплата прошла успешно
+            $lastOrder->status = true;
+            $lastOrder->save();
+            Session::forget('cart'); //очистка корзины
+            return redirect('order_history')->with('success','Успешная оплата');
+        }else {
+            redirect()->back()->with('error', 'Ошибка оплаты');
         }
-
     }
-
-    private function liqpaySet($total) {
-        $public_key = "i14515347728";
-        $private_key = "6xlWSk41j2cdtBJvpeZTsnprtnbhAKzkZe0Pixlx";
+    /**
+     * Формирование формы для проведения оплаты LiqPay
+     *
+     * @param $total
+     * @param $order_id
+     * @return string
+     */
+    private function liqpaySet($total, $order_id) {
         $params = [
             'action'         => 'pay',
             'amount'         => $total,
             'currency'       => 'USD',
             'description'    => 'Покупка нот в магазине "Играй с душой" ',
-            'order_id'       => 'notes_'.rand(10000, 99999),
+            'order_id'       => $order_id,
             'version'        => '3',
             'sandbox'        => '1',
-            'public_key'     => 'i14515347728',
-            'result_url'     => 'play.local/success'
+            'public_key'     =>  self::PUBLIC_KEY,
+            'result_url'     => 'play.local/status'
         ];
-        $liqpay = new LiqPay($public_key, $private_key);
+        $liqpay = new LiqPay(self::PUBLIC_KEY, self::PRIVATE_KEY);
         $html = $liqpay->cnb_form($params);
 
         return $html;
-
     }
 }

@@ -38,4 +38,12 @@ class User extends Authenticatable
     public function blog() {
         return $this->hasMany('App\Blog');
     }
+    /**
+     * Пользователь может иметь много заказов
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function orders() {
+        return $this->hasMany('App\Order');
+    }
 }

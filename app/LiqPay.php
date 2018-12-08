@@ -105,7 +105,6 @@ class LiqPay
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postfields);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $server_output = curl_exec($ch);
-        dd($server_output);
         $this->_server_response_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
         return json_decode($server_output);

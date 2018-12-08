@@ -9,8 +9,20 @@
                     @foreach($products as $product)
                         <li class="list-group-item">
                             <img class="img-responsive item" src="{{ asset( $product['item']['imagePath'] )  }}" alt="...">
+                            <span class="badge">К-во: {{ $product['qty'] }}</span>
                             <p class="sheets-title">{{ $product['item']['title'] }}</p>
                             <span class="price">{{ $product['price'] }} $</span>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{ url('reduce/'.$product['item']['id']) }}">Уменьшить на 1</a>
+                                        <a href="{{ url('remove/'.$product['item']['id']) }}">Удалить</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                     @endforeach
                 </ul>
