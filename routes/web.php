@@ -21,6 +21,8 @@ Route::resource('blog', 'UserBlogController', ['only' => [
 ]]);
 Route::get('shops','ProductController@index');
 Route::get('add-to-cart/{id}','ProductController@getAddToCart');
+Route::get('reduce/{id}', 'ProductController@getReduceByOne');
+Route::get('remove/{id}', 'ProductController@getRemoveItem');
 Route::get('shopping-cart', 'ProductController@getCart');
 Route::get('checkout', 'ProductController@getCheckout');
 Route::get('status', 'ProductController@paymentStatus');

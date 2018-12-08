@@ -16,8 +16,8 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="">Уменьшить на 1</a>
-                                        <a href="">Уменишить всё</a>
+                                        <a href="{{ url('reduce/'.$product['item']['id']) }}">Уменьшить на 1</a>
+                                        <a href="{{ url('remove/'.$product['item']['id']) }}">Удалить</a>
                                     </li>
                                 </ul>
                             </div>
