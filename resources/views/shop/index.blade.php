@@ -23,7 +23,7 @@
                                 <div class="pull-left price">${{ $product->price }}</div>
                                 <a class="button-link pull-right" href="{{ url('/add-to-cart/'. $product->id) }}">
                                     <div class="button download-btn">
-                                        <span>Купить</span>
+                                        <span>В корзину</span>
                                     </div>
                                 </a>
                             </div>

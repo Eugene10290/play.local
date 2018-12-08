@@ -120,7 +120,11 @@ class ProductController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function paymentStatus() {
-        $lastOrder = Auth::user()->orders()->orderBy('id','desc')->first(); //получение последнего платежа на проверку
+        $lastOrder = Auth::user()
+            ->orders()
+            ->orderBy('id','desc')
+            ->first(); //получение последнего платежа на проверку
+
         $order_id = $lastOrder->order_id;
         $liqpay = new LiqPay(self::PUBLIC_KEY, self::PRIVATE_KEY);
 
@@ -129,12 +133,11 @@ class ProductController extends Controller
             'version'       => '3',
             'order_id'      => $order_id
         ));
-
         if($res->status === 'sandbox'){ //Если оплата прошла успешно
             $lastOrder->status = true;
             $lastOrder->save();
             Session::forget('cart'); //очистка корзины
-            return redirect('order_history')->with('success','Успешная оплата');
+            return redirect('user/orders')->with('success','Успешная оплата');
         }else {
             redirect()->back()->with('error', 'Ошибка оплаты');
         }
