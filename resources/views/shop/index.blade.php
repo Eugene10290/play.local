@@ -15,7 +15,7 @@
             @foreach($products as $product)
                 <div class="col-sm-6 col-md-6">
                     <div class="thumbnail">
-                        <img class="img-responsive item" src="{{ asset( $product->imagePath )  }}" alt="...">
+                        <img class="img-responsive item" src="{{ asset('public/images/uploads/notes/'. $product->wall )  }}" alt="...">
                         <div class="caption">
                             <h3>{{ $product->title }}</h3>
                             <p class="descriprion">{{ $product->description }} </p>

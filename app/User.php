@@ -46,4 +46,12 @@ class User extends Authenticatable
     public function orders() {
         return $this->hasMany('App\Order');
     }
+    /**
+     * Пользователь может иметь много нот
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function products() {
+        return $this->hasMany('App\Product');
+    }
 }

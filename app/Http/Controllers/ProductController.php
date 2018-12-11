@@ -12,8 +12,6 @@ use Auth;
 use App\Product;
 use Session;
 
-
-
 class ProductController extends Controller
 {
     const PUBLIC_KEY = 'i14515347728';
@@ -29,8 +27,7 @@ class ProductController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index() {
-
-        $products = Product::all();
+        $products = Product::orderBy('id', 'desc')->get();
 
         return view('shop.index', compact('products'));
     }
@@ -50,6 +47,12 @@ class ProductController extends Controller
 
         return redirect('shops');
     }
+    /**
+     * Удалить один элемент
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function getReduceByOne($id) {
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
@@ -62,6 +65,12 @@ class ProductController extends Controller
 
         return redirect('shopping-cart');
     }
+    /**
+     * Удалить элемент полностью
+     *
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function getRemoveItem($id) {
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);

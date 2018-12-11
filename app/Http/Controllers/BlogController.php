@@ -120,7 +120,6 @@ class BlogController extends Controller
 
         return redirect('blog/'.$blog->slug);
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -137,7 +136,6 @@ class BlogController extends Controller
 
         return redirect()->back();
     }
-
     /**
      * Отделяет новые тэги от уже созданных и применяет к статье
      *

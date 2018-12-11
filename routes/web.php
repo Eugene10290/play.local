@@ -15,7 +15,7 @@ Route::get('/','IndexController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home'); //Удалить
 Route::resource('blog', 'UserBlogController', ['only' => [
     'index', 'show'
 ]]);
@@ -34,6 +34,7 @@ Route::group(['prefix' => 'admin'], function(){
     Route::resource('/blog', 'BlogController')->parameters([
         'blogs' => 'blog'
     ]);
+    Route::resource('/notes', 'NotesController');
 
 });
 Route::group(['prefix' => 'user'], function() {

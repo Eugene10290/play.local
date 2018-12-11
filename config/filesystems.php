@@ -66,6 +66,11 @@ return [
         'uploads' => [
             'driver' => 'local',
             'root' => public_path('images\uploads')
+        ],
+        'notes' => [
+            'driver' => 'local',
+            'root' => storage_path('app\notes'),
+            'visibility' => 'private'
         ]
     ],
 
