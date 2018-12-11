@@ -9,7 +9,7 @@
                 <div class="bgc-img2"></div>
             </a>
             <div class="news-description">
-                <h3 class="article-title"><a href="{{ url('admin/blog', $n->slug) }}">{{ $n->title }}</a></h3>
+                <h3 class="article-title"><a href="{{ url('blog', $n->slug) }}">{{ $n->title }}</a></h3>
                 <time class="time-article" datetime="{{$n->published_at}}"><span class="fa fa-clock-o fa-1x"></span>{{$n->getBeautifulDateAttribute()}}</time>
                 <ul class="tag-common">
                     @foreach($n->tags as $tag)

@@ -23,7 +23,7 @@
                     <td>{{ $note->description }}</td>
                     <td>{{ $note->price }} $</td>
                     <td>
-                        <a href="#">Редактировать</a>
+                        <a href="{{ url('admin/notes/'.$note->id.'/edit') }}">Редактировать</a>
                         <a href="#">Удалить</a>
                     </td>
                 </tr>

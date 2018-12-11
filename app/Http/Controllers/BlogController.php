@@ -108,7 +108,7 @@ class BlogController extends Controller
 
         if($input !== null) {
             $old_image = $blog->wall;
-            $disk = $this->factory->disk('uploads'); //config->filesystems
+            $disk = $this->factory->disk('uploads');
             $disk->delete('/blogImages/' . $old_image);
             $blog->update($input);
         }else {

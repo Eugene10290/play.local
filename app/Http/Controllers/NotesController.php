@@ -69,7 +69,9 @@ class NotesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::findOrFail($id);
+
+        return view('notes.edit', compact('product'));
     }
 
     /**
@@ -81,7 +83,21 @@ class NotesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $input = $this->notesRequest($request);
+        if(array_key_exists('wall',$input) === true){
+            $oldWall = $product->wall;
+            $disk = $this->factory->disk('uploads');
+            $disk->delete('/notes/'.$oldWall);
+            $product->update($input);
+        }
+        if(array_key_exists('pdf', $input) === true) {
+            $oldPdf = $product->pdf;
+            $disk = $this->factory->disk('notes');
+            $disk->delete(''.$oldPdf);
+
+            $product->update($input);
+        }
     }
 
     /**
@@ -108,25 +124,26 @@ class NotesController extends Controller
      * @return array
      */
     protected function notesRequest($request) {
-        if ($request->hasFile('wall','pdf')) {
+        $input = $request->all();
+        if($request->hasFile('wall')) {
             $image = $request->file('wall');
+            $imageName = time() . "." . $image->getClientOriginalExtension();
+            $savePath = public_path('images/uploads/notes/' . $imageName);
+            Image::make($image)
+                ->save($savePath);
+            $input = array_except($input, 'pathName');
+            $input['wall'] = $imageName;
+        }
+        if ($request->hasFile('pdf')) {
             $pdf = $request->file('pdf');
             if($pdf->getClientOriginalExtension() === 'pdf') {
-                $imageName = time() . "." . $image->getClientOriginalExtension();
                 $pdfName = time(). '.'.$pdf->getClientOriginalExtension();
-                $savePath = public_path('images/uploads/notes/' . $imageName);
-                Image::make($image)
-                    ->save($savePath);
                 $disk = $this->factory->disk('notes');
                 $disk->putFileAs('',$request->file('pdf'),$pdfName);
                 $disk->setVisibility(''.$pdfName,'private');
-                $input = $request->all(); //формирование вывода
-                $input = array_except($input, 'pathName');
-                $input['wall'] = $imageName;
                 $input['pdf'] = $pdfName;
-
-                return $input;
             }
         }
+        return $input;
     }
 }
