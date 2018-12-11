@@ -23,8 +23,17 @@
                     <td>{{ $note->description }}</td>
                     <td>{{ $note->price }} $</td>
                     <td>
+                        <a></a>
                         <a href="{{ url('admin/notes/'.$note->id.'/edit') }}">Редактировать</a>
-                        <a href="#">Удалить</a>
+                        {!! Form::open(['url' => 'admin/notes/'.$note->id, 'action' => 'NotesController@destroy', 'method' => 'DELETE', 'class' => 'admin button'])!!}
+                        {!! Form::token() !!}
+                        {!! Form::submit('Удалить',
+                             [
+                                'class' => 'btn btn-danger btn-xs confirm delete',
+                                'onclick' => 'return confirm("Удалить статью?")'
+                             ])
+                         !!}
+                        {!! Form::close() !!}
                     </td>
                 </tr>
             @endforeach

@@ -62,10 +62,10 @@ class NotesController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Отображение формы для редактирования нот
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {
@@ -75,11 +75,11 @@ class NotesController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Обновление нот
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $id)
     {
@@ -95,21 +95,38 @@ class NotesController extends Controller
             $oldPdf = $product->pdf;
             $disk = $this->factory->disk('notes');
             $disk->delete(''.$oldPdf);
-
             $product->update($input);
         }
+
+        return redirect('admin/notes')->with('success','Изменения внесены');
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Удаление товара и привязанного к нему изображения и pdf-файла
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        //
+        $note = Product::findOrFail($id);
+        $wall = $note->wall;
+        $pdf = $note->pdf;
+        $diskNotes = $this->factory->disk('notes');
+        $diskImage = $this->factory->disk('uploads');
+        $diskImage->delete('/notes/'.$wall);
+        $diskNotes->delete('',$pdf);
+        $note->delete();
+
+        return redirect()->back();
     }
+
+    /**
+     * Создание нот
+     *
+     * @param $request
+     * @return mixed
+     */
     protected function createNotes($request) {
         $input = $this->notesRequest($request);
         $notes = Auth::user()->products()->create($input);
