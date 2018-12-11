@@ -8,7 +8,7 @@
                 <ul class="list-group">
                     @foreach($products as $product)
                         <li class="list-group-item">
-                            <img class="img-responsive item" src="{{ asset( $product['item']['imagePath'] )  }}" alt="...">
+                            <img class="img-responsive item" src="{{ asset('public/images/uploads/notes/'.$product['item']['wall'] )  }}" alt="...">
                             <span class="badge">К-во: {{ $product['qty'] }}</span>
                             <p class="sheets-title">{{ $product['item']['title'] }}</p>
                             <span class="price">{{ $product['price'] }} $</span>

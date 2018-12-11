@@ -97,6 +97,7 @@ class NotesController extends Controller
             $disk->delete(''.$oldPdf);
             $product->update($input);
         }
+        $product->update($input);
 
         return redirect('admin/notes')->with('success','Изменения внесены');
     }

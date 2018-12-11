@@ -23,7 +23,6 @@
                     <td>{{ $note->description }}</td>
                     <td>{{ $note->price }} $</td>
                     <td>
-                        <a></a>
                         <a href="{{ url('admin/notes/'.$note->id.'/edit') }}">Редактировать</a>
                         {!! Form::open(['url' => 'admin/notes/'.$note->id, 'action' => 'NotesController@destroy', 'method' => 'DELETE', 'class' => 'admin button'])!!}
                         {!! Form::token() !!}
