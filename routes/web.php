@@ -39,4 +39,5 @@ Route::group(['prefix' => 'admin'], function(){
 });
 Route::group(['prefix' => 'user'], function() {
     Route::get('orders', 'ProfileController@index');
+    Route::get('orders/download/{name}','ProfileController@downloadPdf');
 });

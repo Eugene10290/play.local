@@ -28,4 +28,16 @@ class ProfileController extends Controller
 
         return view('user.profile', compact('orders'));
     }
+
+    /**
+     * Формирование ссылки для загрузки нот
+     *
+     * @param $name
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
+     */
+    public function downloadPdf($name) {
+        $path = storage_path('app\notes/'.$name);
+
+        return response()->download($path);
+    }
 }

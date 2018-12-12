@@ -9,12 +9,13 @@
                 <div class="panel-body">
                     <div class="list-group">
                         @foreach($order->cart->items as $item)
-                                <li class="list-group-item">
-                                        <span>
-                                            {{ $item['price'] }}
-                                        </span>
-                                    {{ $item['item']['title'] }}
-                                </li>
+                            <li class="list-group-item">
+                                <span>
+                                    {{ $item['price'] }}
+                                </span>
+                                {{ $item['item']['title'] }}
+                            </li>
+                            <a href="{{ url('user/orders/download/'.$item['item']['pdf']) }}">Скочать</a>
                         @endforeach
                     </div>
                 </div>

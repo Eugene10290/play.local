@@ -3,6 +3,7 @@
 @section('content')
 <link href="{{ asset('public/css/shop/shoping-cart.css') }}" rel="stylesheet" type="text/css" >
     @if(Session::has('cart'))
+
         <div class="row">
             <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
                 <ul class="list-group">
