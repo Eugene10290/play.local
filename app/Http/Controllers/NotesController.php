@@ -13,6 +13,12 @@ class NotesController extends Controller
     public function __construct(Factory $factory)
     {
         $this->factory = $factory;
+        $this->middleware('permission:note-create',
+            ['only' => ['create','store']]);
+        $this->middleware('permission:note-edit',
+            ['only' => ['edit', 'update','index']]);
+        $this->middleware('permission:note-delete',
+            ['only' => ['destroy']]);
     }
 
     /**
