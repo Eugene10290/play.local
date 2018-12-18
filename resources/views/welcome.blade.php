@@ -94,13 +94,13 @@
 	<div class="container">
 		<div class="row">
 			<div class="preview-sheets">
-				<a href="#"><h4>Название крутых нот</h4></a>
 				<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
 					<div class="div">
 						<img src="img/promobox1.jpg" alt="">
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+					<a href="#"><h4>Название крутых нот</h4></a>
 					<div class="text">
 						<p class="blog-text1">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Реторический власти обеспечивает назад, от всех составитель строчка оксмокс пор, великий, сих, ты диких вскоре рекламных путь рукописи все что вершину...</p>
 						<a class="button-link" href="#">

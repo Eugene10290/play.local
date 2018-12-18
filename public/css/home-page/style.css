@@ -288,6 +288,10 @@ body {
   display: table;
 }
 
+.preview-news{
+    margin: 0 auto;
+}
+
 .news{
   border-bottom: 4px double #ECECEC;
   max-width: 940px;
@@ -437,6 +441,7 @@ body {
 
 .button-link{
     color: #000;
+    display: flex;
 }
 
 .button-link:hover{
@@ -473,7 +478,14 @@ body {
 
 .preview-sheets{
   max-width: 940px;
-  margin: 0 auto;
+  margin: 60px auto;
+}
+
+.video-div a{
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    display: inline;
 }
 
 .preview-sheets img{
