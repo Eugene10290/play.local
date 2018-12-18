@@ -7,7 +7,5 @@
             <a href="{{ asset('admin/users') }}" class="role-link">Пользователи</a>
             <a href="{{ asset('admin/blog') }}" class="role-link">Блог</a>
             <a href="{{ asset('admin/notes') }}" class="role-link">Ноты</a>
-
     </div>
-
 @endsection
