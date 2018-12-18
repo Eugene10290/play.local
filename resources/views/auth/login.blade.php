@@ -8,12 +8,12 @@
                 <div class="card-header">
                     <div class="tab" id="tab-login">
                         <a href="#login">
-                            {{ __('Login') }}
+                            {{ __('Вход') }}
                         </a>
                     </div>
                     <div class="tab" id="tab-registration">
                         <a href="#register">
-                            {{ __('Register') }}
+                            {{ __('Регистрация') }}
                         </a>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
 
                             <div class="form-group row form-group-login">
                                 <div class="col-md-6">
-                                    <input id="email" type="email" placeholder="{{ __('E-Mail Address *') }}" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                    <input id="email" type="email" placeholder="{{ __('E-Mail Адрес *') }}" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
                                     @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -37,7 +37,7 @@
 
                             <div class="form-group row form-group-login">
                                 <div class="col-md-6">
-                                    <input id="password-login" type="password" placeholder="{{ __('Password *') }}" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                    <input id="password-login" type="password" placeholder="{{ __('Пароль *') }}" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                     @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
@@ -51,7 +51,7 @@
                                 <div class="col-md-6">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
+                                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Запомнить меня') }}
                                         </label>
                                     </div>
                                 </div>
@@ -60,11 +60,11 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-8">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Login') }}
+                                        {{ __('Вход') }}
                                     </button>
 
                                     <a class="forgot-password btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('Забыли пароль?') }}
                                     </a>
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                             <div class="top-row">
                                 <div class="form-group form-group-top row">
                                     <div class="col-md-12">
-                                        <input id="name" type="text" placeholder="{{ __('Name *') }}" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                                        <input id="name" type="text" placeholder="{{ __('Имя *') }}" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
                                         @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -90,7 +90,7 @@
 
                                 <div class="form-group row">
                                     <div class="col-md-12">
-                                        <input id="email"  type="email" placeholder="{{ __('E-Mail Address *') }}" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                                        <input id="email"  type="email" placeholder="{{ __('E-Mail Адресс *') }}" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
                                         @if ($errors->has('email'))
                                         <span class="invalid-feedback" role="alert">
@@ -103,7 +103,7 @@
 
                             <div class="form-group row">
                                 <div class="col-md-12">
-                                    <input id="password" type="password" placeholder="{{ __('Password *') }}" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                    <input id="password" type="password" placeholder="{{ __('Пароль *') }}" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                     @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
@@ -115,14 +115,14 @@
 
                             <div class="form-group row">
                                 <div class="col-md-12">
-                                    <input id="password-confirm" type="password" placeholder="{{ __('Confirm Password *') }}" class="form-control" name="password_confirmation" required>
+                                    <input id="password-confirm" type="password" placeholder="{{ __('Повторите пароль *') }}" class="form-control" name="password_confirmation" required>
                                 </div>
                             </div>
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4" id="button-reg">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Register') }}
+                                        {{ __('Регистрация') }}
                                     </button>
                                 </div>
                             </div>
