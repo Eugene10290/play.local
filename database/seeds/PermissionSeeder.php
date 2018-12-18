@@ -71,6 +71,23 @@ class PermissionSeeder extends Seeder
                 'display_name' => 'Удаление записи',
                 'description' => 'Удаление записи в блоге'
             ],
+            /*------Работа с нотами------*/
+            [
+                'name' => 'note-create',
+                'display_name' => 'Создание нот',
+                'description' => 'Создание нот'
+            ],
+            [
+                'name' => 'note-edit',
+                'display_name' => 'Редактирование нот',
+                'description' => 'Редактирование нот'
+            ],
+            [
+                'name' => 'note-delete',
+                'display_name' => 'Удаление нот',
+                'description' => 'Удаление нот'
+            ],
+
         ];
         foreach ($permission as $key => $value) {
             Permission::create($value);
