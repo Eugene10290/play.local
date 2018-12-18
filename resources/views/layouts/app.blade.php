@@ -32,7 +32,7 @@
                 <div class="row" >
                     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="height: 100%">
                         <a class="navbar-brand" href="{{ url('/') }}">
-                            {{ config('app.name', 'Laravel') }}
+                            {{ config('app.name', 'Виталий Стульнев') }}
                         </a>
                     </div>
                     <div class="col-lg-10 col-md-10 col-sm-9 col-xs-8" style="height: 100%">
@@ -75,7 +75,9 @@
                                            document.getElementById('logout-form').submit();">
                                             {{ __('Выход') }}
                                         </a>
-                                        <a class="dropdown-item" href="{{ url('admin/') }}">{{ __('Админ-панель') }}</a>
+                                        @if(\Entrust::can('index'))
+                                            <a class="dropdown-item" href="{{ url('admin/') }}">{{ __('Админ-панель') }}</a>
+                                        @endif
                                         <a class="dropdown-item" href="{{ url('user/orders') }}">Заказы</a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -127,27 +129,28 @@
                             <a href="#0" class="link menu__link">Поддержка проекта</a>
                         </li>
                         @guest
-                        <li class="menu__group nav-item unlogin">
-                            <a class="nav-link gate-site1" href="{{ route('login') }}">{{ __('Вход') }}</a>
-                        </li>
+                            <li class="menu__group nav-item unlogin">
+                                <a class="nav-link gate-site1" href="{{ route('login') }}">{{ __('Вход') }}</a>
+                            </li>
                         @else
-                        <li class="menu__group nav-item dropdown unlogin">
-                            <a id="" class="nav-link dropdown-toggle unlogin-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-                            <div class="menu__group" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item1" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                           document.getElementById('logout-form').submit();">
-                                    {{ __('Выход') }}
+                            <li class="menu__group nav-item dropdown unlogin">
+                                <a id="" class="nav-link dropdown-toggle unlogin-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-                                <a class="dropdown-item1" href="admin">{{ __('Админ-панель') }}</a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
+                                <div class="menu__group" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item1" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                               document.getElementById('logout-form').submit();">
+                                        {{ __('Выход') }}
+                                    </a>
+                                    @if(\Entrust::can('index'))
+                                        <a class="dropdown-item1" href="admin">{{ __('Админ-панель') }}</a>
+                                    @endif
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
                         @endguest
                     </ul>
                 </nav>

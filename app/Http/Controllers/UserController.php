@@ -89,8 +89,7 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'email' => 'required|email|unique:users,email,'.$id,
-            'password' => 'confirmed',
-            'roles' => 'required'
+            'password' => 'confirmed'
         ]);
         $input = $request->only('name', 'email', 'password');
 
@@ -107,9 +106,12 @@ class UserController extends Controller
             ->where('user_id', $id)
             ->delete();
         //Применение обновлённых ролей к пользователю
-        foreach ($request->input('roles') as $key => $value){
-            $user->attachRole($value);
+        if(!empty($request->input('roles'))) {
+            foreach ($request->input('roles') as $key => $value){
+                $user->attachRole($value);
+            }
         }
+
 
         return redirect()->route('users.index')
             ->with('success','Пользователь обновлён успешно');

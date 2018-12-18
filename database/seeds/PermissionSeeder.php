@@ -13,6 +13,11 @@ class PermissionSeeder extends Seeder
     public function run()
     {
         $permission = [
+            [
+              'name' => 'index',
+              'display_name' => 'Главная страница',
+              'description' => 'Отображение главной страницы админ-панели'
+            ],
             /*------Роли------*/
             [
                 'name' => 'role-create',
