@@ -14,7 +14,9 @@
 Route::get('/','IndexController@index');
 
 Auth::routes();
-
+Route::get('/about', function (){
+    return view('about');
+});
 Route::get('/home', 'HomeController@index')->name('home'); //Удалить
 Route::resource('blog', 'UserBlogController', ['only' => [
     'index', 'show'
