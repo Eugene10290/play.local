@@ -30,12 +30,12 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <div class="row" >
-                    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="height: 100%">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="height: 100%">
                         <a class="navbar-brand" href="{{ url('/') }}">
                             {{ config('app.name', 'Виталий Стульнев') }}
                         </a>
                     </div>
-                    <div class="col-lg-10 col-md-10 col-sm-9 col-xs-8" style="height: 100%">
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8" style="height: 100%">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <!-- Left Side Of Navbar -->
                             <ul class="navbar-nav mr-auto">
@@ -58,10 +58,10 @@
                                             <li><a href="{{ url('shops') }}">Купить</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="{{ url('/about') }}">О нас</a></li>
+                                    <li><a href="{{ url('/about') }}">Обо мне</a></li>
                                 </ul>
                                 @guest
-                                    <li class="nav-item">
+                                    <li class="nav-item" style="font-size: 14px;">
                                         <a class="nav-link gate-site" href="{{ route('login') }}">{{ __('Вход') }}</a>
                                     </li>
                                 @else
@@ -126,7 +126,7 @@
                             </ul>
                         </li>
                         <li class="menu__group">
-                            <a href="{{ url('/about') }}" class="link menu__link">О нас</a>
+                            <a href="{{ url('/about') }}" class="link menu__link">Обо мне</a>
                         </li>
                         @guest
                             <li class="menu__group nav-item unlogin">

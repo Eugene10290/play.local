@@ -7,8 +7,15 @@
 }
 .price{
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
+    background-color: #32CD32;
+    width: 60px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 9px;
+    color: #000;
 }
+
 .thumbnail .descriprion {
     color: #7f7f7f;
 }

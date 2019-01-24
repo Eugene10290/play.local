@@ -78,7 +78,7 @@
 									<h4>{{ $a->title }}</h4>
 									<p class="data1">{{ $a->published_at }}</p>
 							</div>
-							<p class="blog-text1">{!! strip_tags( mb_strimwidth($a->body, 0, 450, '...') ) !!}</p>
+							<p class="blog-text1">{!! strip_tags( mb_strimwidth($a->body, 0, 1000, '...') ) !!}</p>
 							<a class="button-link" href="{{ url('blog/'.$a->slug) }}">
 								<div class="button">
 									<span>Читать полностью</span>

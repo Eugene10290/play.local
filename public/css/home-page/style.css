@@ -477,8 +477,9 @@ body {
 }
 
 .preview-sheets{
-  max-width: 940px;
-  margin: 60px auto;
+    max-width: 940px;
+    width: 940px;
+    margin: 60px auto;
 }
 
 .video-div a{
