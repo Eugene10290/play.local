@@ -490,6 +490,10 @@ body {
 }
 
 .preview-sheets img{
+    width: 500px;
+    height: 682px;
+    background-size: cover;
+    background-position: center;
     border-radius: 5px;
     box-shadow: 0 0px 20px rgba(0,0,0,.175);
     float: left;

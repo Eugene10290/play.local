@@ -38,6 +38,10 @@
     padding: 0;
 }
 .thumbnail  img {
+    width: 440px;
+    height: 582px;
+    background-size: cover;
+    background-position: center;
     margin-right: auto;
     margin-left: auto;
     border-radius: 5px;
