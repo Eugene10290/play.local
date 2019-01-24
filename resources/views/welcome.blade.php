@@ -42,10 +42,12 @@
 		<div class="row">
 			<div class="short-mnu">
 		    	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-					<div class="block-mnu1">
-						<img src="img/promobox1.jpg" alt="">
-						<h3>Играй с душой</h3>
-					</div>
+					<a href="https://www.youtube.com/channel/UCWlckzGxPrKFVMH1MyF7wJA" target="_blank">
+						<div class="block-mnu1">
+							<img src="img/promobox1.jpg" alt="">
+							<h3>Играй с душой</h3>
+						</div>
+					</a>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 					<a href="{{ url('shops') }}">

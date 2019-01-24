@@ -46,12 +46,7 @@
                             <ul class="navbar-nav ml-auto">
                                 <!-- Authentication Links -->
                                 <ul class="mnu">
-                                    <li><a href="#">Играй с душой</a>
-                                        <ul>
-                                            <li><a href="#">Аудио</a></li>
-                                            <li><a href="#">Видео</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="https://www.youtube.com/channel/UCWlckzGxPrKFVMH1MyF7wJA" target="_blank">Играй с душой</a></li>
                                     <li><a href="{{ url('/blog') }}">Блог</a></li>
                                     <li><a href="#">Ноты</a>
                                         <ul>
@@ -110,11 +105,7 @@
                 <nav class="menu">
                     <ul class="list menu__list">
                         <li class="menu__group">
-                            <a href="#0" class="link menu__link">Играй с душой</a>
-                            <ul>
-                                <li><a href="#">Аудио</a></li>
-                                <li><a href="#">Видео</a></li>
-                            </ul>
+                            <a href="https://www.youtube.com/channel/UCWlckzGxPrKFVMH1MyF7wJA" target="_blank" class="link menu__link">Играй с душой</a>
                         </li>
                         <li class="menu__group">
                             <a href="{{ url('/blog') }}" class="link menu__link">Блог</a>

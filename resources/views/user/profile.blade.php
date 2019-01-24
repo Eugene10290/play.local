@@ -1,7 +1,6 @@
 @extends('layouts.app')
-<link href="{{ asset('public/css/profile/style.css') }}" rel="stylesheet" type="text/css" >
-
 @section('content')
+<link href="{{ asset('public/css/profile/style.css') }}" rel="stylesheet" type="text/css" >
     <div class="container">
         <div class="row">
             <div class="list-orders">
