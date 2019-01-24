@@ -94,22 +94,24 @@
 	<div class="container">
 		<div class="row">
 			<div class="preview-sheets">
-				<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
-					<div class="div">
-						<img src="img/promobox1.jpg" alt="">
+				@foreach($notes as $note)
+					<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
+						<div class="div">
+							<img src="{{ asset('images/uploads/notes/'.$note->wall) }}" alt="">
+						</div>
 					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
-					<a href="#"><h4>Название крутых нот</h4></a>
-					<div class="text">
-						<p class="blog-text1">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Реторический власти обеспечивает назад, от всех составитель строчка оксмокс пор, великий, сих, ты диких вскоре рекламных путь рукописи все что вершину...</p>
-						<a class="button-link" href="#">
-							<div class="button download-btn">
-								<span>Скачать</span>
-							</div>
-						</a>
+					<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+						<a href="#"><h4>{{ $note->title}}</h4></a>
+						<div class="text">
+							<p class="blog-text1">{{ $note->description }}</p>
+							<a class="button-link" href="{{ url('shops')}}">
+								<div class="button download-btn">
+									<span>К покупкам</span>
+								</div>
+							</a>
+						</div>
 					</div>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</div>
@@ -117,18 +119,21 @@
 	<div class="container">
 		<div class="row">
 			<div class="video-div">
-				<a href="#"><h4>Название крутого видео</h4></a>
+				<!--<a href="#"><h4>Видео</h4></a>-->
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<iframe src="https://www.youtube.com/embed/i2Bj_rdZKA0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 				</div>
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<p class="video-text1">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Реторический власти обеспечивает назад, от всех составитель строчка оксмокс пор, великий, сих, ты диких вскоре рекламных путь рукописи все что вершину...</p>
-				</div>
+					<p class="video-text1">
+						Сильно вдохновил меня Simon Khorolskiy на написание переложения этого псалма. Я даже вступление "слизал", не мог ничего с собой поделать, уж очень по народному - баянному звучало!
+						<br />
+						Псалом предназначен для двух инструментов но его можно легко с играть и соло, можно убрать "лишние" части, на Ваш взгляд.
+					</p>
 			</div>
 		</div>
 	</div>
 
-    <script src="{{ asset('public/js/jquery-3.3.1.min.js') }}"></script>
+  <script src="{{ asset('public/js/jquery-3.3.1.min.js') }}"></script>
 	<script src="{{ asset('public/js/header/script.js') }}"></script>
 	<script src="{{ asset('public/js/home-page/script.js') }}"></script>
 @endsection

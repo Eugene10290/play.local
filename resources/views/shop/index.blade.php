@@ -10,7 +10,7 @@
 @section('content')
 <link href="{{ asset('public/css/shop/style.css') }}" rel="stylesheet" type="text/css" >
     <div class="container">
-        <h1 class="sheeps">Платные ноты</h1>
+        <h1 class="sheeps">Каталог нот</h1>
         <div class="row">
             @foreach($products as $product)
                 <div class="col-sm-6 col-md-6">

@@ -13,3 +13,5 @@ yarn-error.log
 .env
 public/images/uploads/notes/*
 public/images/uploads/blogImages/*
+public/photos/1/Частые файлы/photo1.jpg
+public/photos/1/Частые файлы/thumbs/photo1.jpg
