@@ -13,7 +13,7 @@
                 <time class="time-article" datetime="{{$n->published_at}}"><span class="fa fa-clock-o fa-1x"></span>{{$n->getBeautifulDateAttribute()}}</time>
                 <ul class="tag-common">
                     @foreach($n->tags as $tag)
-                    <li class="tag-blog"><a href="{{ url('tags/'.$tag->name) }}" class="tag-name">{{$tag->name}} </a></li>
+                    <li class="tag-blog"><a href="#" class="tag-name">{{$tag->name}} </a></li>
                     @endforeach
                 </ul>
                 @permission('blog-edit')

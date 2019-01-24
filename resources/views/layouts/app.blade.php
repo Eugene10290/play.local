@@ -156,11 +156,11 @@
                         <img src="{{ asset('public/img/Visa.png') }}" alt="">
                     </div>
                     <div class="link">
-                        <a href="#"><img src="{{ asset('public/img/facebook.png') }}" alt=""></a>
-                        <a href="#"><img src="{{ asset('public/img/youtube.png') }}" alt=""></a>
-                        <a href="#"><img src="{{ asset('public/img/Instagram.png') }}" alt=""></a>
-                        <a href="#"><img src="{{ asset('public/img/telegram.png') }}" alt=""></a>
-                        <a href="#"><img src="{{ asset('public/img/whatsapp.png') }}" alt=""></a>
+                        <a href="https://www.facebook.com/Stulniev"><img src="{{ asset('public/img/facebook.png') }}" alt=""></a>
+                        <a href="https://www.youtube.com/channel/UCWlckzGxPrKFVMH1MyF7wJA"><img src="{{ asset('public/img/youtube.png') }}" alt=""></a>
+                        <a href="https://www.instagram.com/igraisdushoi/"><img src="{{ asset('public/img/Instagram.png') }}" alt=""></a>
+                        <a href="https://t.me/VitaliySV"><img src="{{ asset('public/img/telegram.png') }}" alt=""></a>
+                        <a href="https://wa.me/380509267506"><img src="{{ asset('public/img/whatsapp.png') }}" alt=""></a>
                         <a href="#"><img src="{{ asset('public/img/g+.png') }}" alt=""></a>
                         <p>&#169; 2018 Stulnev Vitaliy. All rights reserved.</p>
 
