@@ -11,7 +11,7 @@
 			  <div class="slider__item slider__item_active">
 			    <img src="img/bg1.jpg" alt="1" class="slide-img">
 			    	<div class="slide-content">
-			    		<h3>Мега крутой заголовок1</h3>
+			    		<h3>Мегаfff крутой заголовок1</h3>
 			    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel unde impedit earum dicta veritatis odio facilis, consequatur culpa molestiae obcaecati! Quam saepe eum natus quos ipsa omnis at nostrum amet.</p>
 			    	</div>
 			  </div>
