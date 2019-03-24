@@ -32,7 +32,7 @@
                 <div class="row" >
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="height: 100%">
                         <a class="navbar-brand" href="{{ url('/') }}">
-                            {{ config('app.name', 'Виталий Стульнев') }}
+                        	<a href="#"><img  style="width: 40px; height: 40px;" src="{{ asset('public/img/g+.png') }}" alt=""></a>
                         </a>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8" style="height: 100%">
