@@ -14,8 +14,8 @@ use Session;
 
 class ProductController extends Controller
 {
-    const PUBLIC_KEY = 'i14515347728';
-    const PRIVATE_KEY = '6xlWSk41j2cdtBJvpeZTsnprtnbhAKzkZe0Pixlx';
+    const PUBLIC_KEY = 'i145***47728';
+    const PRIVATE_KEY = '6xlWSk41j2cdtBJvpeZTsnprt***AKzkZe0Pixlx';
 
     public function __construct()
     {
